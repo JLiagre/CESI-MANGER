@@ -30,4 +30,8 @@
         width: 30px;
         min-width: 30px;
     }
+
+    .v-app-bar-title__content {
+        width: 140px;
+    }
 </style>
