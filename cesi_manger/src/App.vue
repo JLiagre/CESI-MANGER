@@ -31,7 +31,7 @@ export default {
     align-items: center;
     text-align: center;
 
-    margin-top: 40vh;
+    margin-top: 20vh;
     //margin-left: auto;
     //margin-right: auto;
     //width: 6em;

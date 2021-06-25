@@ -14,8 +14,9 @@
             <v-spacer></v-spacer>
             <v-app-bar-title>CESI MANGER</v-app-bar-title>
             <v-spacer></v-spacer>
-            <v-btn to="/login">Sign in</v-btn>
-            <v-btn to="/signup">Sign up</v-btn>
+            <v-btn to="/cart">Panier</v-btn>
+            <v-btn to="/login">Connexion</v-btn>
+            <v-btn to="/signup">Créer un compte</v-btn>
         </v-app-bar>
     </v-card>
 </template>

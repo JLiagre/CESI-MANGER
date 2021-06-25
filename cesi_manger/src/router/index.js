@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-//import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
@@ -34,6 +33,24 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/About.vue'),
   },
+  //
+  // Les commandes
+  //
+  {
+    path: '/products',
+    name: 'products',
+    component: () => import('../components/Shop/Products.vue'),
+  },
+  {
+    path: '/product',
+    name: 'product',
+    component: () => import('../components/Shop/Product.vue'),
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: () => import('../components/Shop/ShoppingCart.vue')
+  }
 ]
 
 const router = new VueRouter({
