@@ -1,26 +1,89 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <v-app>
+    <my-header></my-header>
+    <router-view></router-view>
+    <my-footer></my-footer>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from '../src/components/Header.vue'
+import Footer from '../src/components/Footer.vue'
 
-export default {name: 'App',
-
+export default {
+  name: 'App',
   components: {
-    HelloWorld
-  }
+    'my-header': Header,
+    'my-footer': Footer,
+  },
+  data: () => ({
+    //
+  }),
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+
+  // Homepage
+  //
+  .btn-group {
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    margin-top: 40vh;
+    //margin-left: auto;
+    //margin-right: auto;
+    //width: 6em;
+  };
+
+  #app {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%
+  };
+
+  // Login page
+  .login-form-group {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 30vh;
+    width: 100%;
+  }
+
+  .login-form-group form {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // Register page
+  .register-form-group {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 30vh;
+    width: 100%;
+  }
+
+  .register-form-group form {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // Forgot password group
+  .forgot-password-group {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 30vh;
+    width: 100%;
+  }
+
+  .forgot-password-group form {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 </style>
