@@ -112,5 +112,25 @@ export default {
   .app-name-bar {
     margin-left: auto;
     margin-right: auto;
+<<<<<<< Updated upstream
   };
 </style>
+=======
+  }
+
+  // Forgot password group
+  .forgot-password-group {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 30vh;
+    width: 100%;
+  }
+
+  .forgot-password-group form {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+</style>
+>>>>>>> Stashed changes
