@@ -1,14 +1,29 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+//import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,
+    name: 'home',
+    component: () => import('../views/Home.vue'),
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: () => import('../components/Auth/Signup.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../components/Auth/Login.vue')
+  },
+  {
+    path: '/forgot-password',
+    name: 'forgot-password',
+    component: () => import('../components/Auth/ForgotPassword.vue')
   },
   {
     path: '/about',
@@ -28,4 +43,3 @@ const router = new VueRouter({
 })
 
 export default router
-
