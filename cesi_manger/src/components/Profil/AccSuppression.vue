@@ -32,7 +32,8 @@ export default {
         font-weight: bold;
     }
     .acc-suppression {
-        padding-bottom: 10em;
+        padding-bottom: 3em;
+        padding-left: 3em;
     }
     .delete-btn {
         padding: 1em;

@@ -7,7 +7,7 @@
                     alt="CESI'EAT Logo"
                     class="shrink-mr-2"
                     contain
-                    src="@/assets/cesi-manger-logo.png"
+                    src="@/assets/images/cesi-manger-logo.png"
                     ></v-img>
                 </v-btn>
             </div>
