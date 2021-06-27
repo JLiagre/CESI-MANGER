@@ -1,12 +1,18 @@
 <template>
-    <div class="acc-suppression">    
+    <div class="container">    
         <h2 class="delete-label">Supprimer ou Geler mon compte</h2>
-        <div class="delete-btn">
-            <button class="btn btn-primary" @click="AccDelete()">Supprimer</button>
-        </div>
-        <div class="freeze-btn">
-            <button class="btn btn-primary" @click="AccFreeze()">Geler</button>
-        </div>    
+        <div class="row">    
+            <div class="col">
+                <div class="delete-btn">
+                    <button class="btn btn-primary" @click="AccDelete()">Supprimer</button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="freeze-btn">
+                    <button class="btn btn-primary" @click="AccFreeze()">Geler</button>
+                </div>  
+            </div> 
+        </div> 
     </div>
 </template>
 
@@ -30,12 +36,5 @@ export default {
 <style>
     .delete-label {
         font-weight: bold;
-    }
-    .acc-suppression {
-        padding-bottom: 3em;
-        padding-left: 3em;
-    }
-    .delete-btn {
-        padding: 1em;
     }
 </style>
