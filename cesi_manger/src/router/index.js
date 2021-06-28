@@ -9,6 +9,9 @@ const routes = [
     name: 'home',
     component: () => import('../views/Home.vue'),
   },
+  //
+  // Connexion
+  //
   {
     path: '/signup',
     name: 'signup',
@@ -27,14 +30,10 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: () => import('../views/About.vue'),
   },
   //
-  // Les commandes
+  // Commandes
   //
   {
     path: '/products',
@@ -50,7 +49,13 @@ const routes = [
     path: '/cart',
     name: 'cart',
     component: () => import('../components/Shop/ShoppingCart.vue')
-  }
+  },
+  /* TODO
+  {
+    path: '/payment',
+    name: 'payment',
+    component: () => import('../components/Shop/Payment.vue')
+  },*/
 ]
 
 const router = new VueRouter({
