@@ -9,28 +9,28 @@ export default [
         icon: 'cil-speedometer',
         badge: {
           color: 'primary',
-          text: 'NEW'
-        }
+          text: 'NEW',
+        },
       },
       {
         _name: 'CSidebarNavTitle',
-        _children: ['Theme']
+        _children: ['Theme'],
       },
       {
         _name: 'CSidebarNavItem',
         name: 'Colors',
         to: '/theme/colors',
-        icon: 'cil-drop'
+        icon: 'cil-drop',
       },
       {
         _name: 'CSidebarNavItem',
         name: 'Typography',
         to: '/theme/typography',
-        icon: 'cil-pencil'
+        icon: 'cil-pencil',
       },
       {
         _name: 'CSidebarNavTitle',
-        _children: ['Components']
+        _children: ['Components'],
       },
       {
         _name: 'CSidebarNavDropdown',
@@ -40,69 +40,69 @@ export default [
         items: [
           {
             name: 'Breadcrumbs',
-            to: '/base/breadcrumbs'
+            to: '/base/breadcrumbs',
           },
           {
             name: 'Cards',
-            to: '/base/cards'
+            to: '/base/cards',
           },
           {
             name: 'Carousels',
-            to: '/base/carousels'
-          }, 
+            to: '/base/carousels',
+          },
           {
             name: 'Collapses',
-            to: '/base/collapses'
+            to: '/base/collapses',
           },
           {
             name: 'Forms',
-            to: '/base/forms'
+            to: '/base/forms',
           },
           {
             name: 'Jumbotrons',
-            to: '/base/jumbotrons'
+            to: '/base/jumbotrons',
           },
           {
             name: 'List Groups',
-            to: '/base/list-groups'
+            to: '/base/list-groups',
           },
           {
             name: 'Navs',
-            to: '/base/navs'
+            to: '/base/navs',
           },
           {
             name: 'Navbars',
-            to: '/base/navbars'
+            to: '/base/navbars',
           },
           {
             name: 'Paginations',
-            to: '/base/paginations'
+            to: '/base/paginations',
           },
           {
             name: 'Popovers',
-            to: '/base/popovers'
+            to: '/base/popovers',
           },
           {
             name: 'Progress Bars',
-            to: '/base/progress-bars'
+            to: '/base/progress-bars',
           },
           {
             name: 'Switches',
-            to: '/base/switches'
+            to: '/base/switches',
           },
           {
             name: 'Tables',
-            to: '/base/tables'
+            to: '/base/tables',
           },
           {
             name: 'Tabs',
-            to: '/base/tabs'
+            to: '/base/tabs',
           },
           {
             name: 'Tooltips',
-            to: '/base/tooltips'
-          }
-        ]
+            to: '/base/tooltips',
+          },
+        ],
       },
       {
         _name: 'CSidebarNavDropdown',
@@ -112,27 +112,27 @@ export default [
         items: [
           {
             name: 'Buttons',
-            to: '/buttons/standard-buttons'
+            to: '/buttons/standard-buttons',
           },
           {
             name: 'Button Dropdowns',
-            to: '/buttons/dropdowns'
+            to: '/buttons/dropdowns',
           },
           {
             name: 'Button Groups',
-            to: '/buttons/button-groups'
+            to: '/buttons/button-groups',
           },
           {
             name: 'Brand Buttons',
-            to: '/buttons/brand-buttons'
-          }
-        ]
+            to: '/buttons/brand-buttons',
+          },
+        ],
       },
       {
         _name: 'CSidebarNavItem',
         name: 'Charts',
         to: '/charts',
-        icon: 'cil-chart-pie'
+        icon: 'cil-chart-pie',
       },
       {
         _name: 'CSidebarNavDropdown',
@@ -145,18 +145,18 @@ export default [
             to: '/icons/coreui-icons',
             badge: {
               color: 'info',
-              text: 'NEW'
-            }
+              text: 'NEW',
+            },
           },
           {
             name: 'Brands',
-            to: '/icons/brands'
+            to: '/icons/brands',
           },
           {
             name: 'Flags',
-            to: '/icons/flags'
-          }
-        ]
+            to: '/icons/flags',
+          },
+        ],
       },
       {
         _name: 'CSidebarNavDropdown',
@@ -166,17 +166,17 @@ export default [
         items: [
           {
             name: 'Alerts',
-            to: '/notifications/alerts'
+            to: '/notifications/alerts',
           },
           {
             name: 'Badges',
-            to: '/notifications/badges'
+            to: '/notifications/badges',
           },
           {
             name: 'Modals',
-            to: '/notifications/modals'
-          }
-        ]
+            to: '/notifications/modals',
+          },
+        ],
       },
       {
         _name: 'CSidebarNavItem',
@@ -186,16 +186,16 @@ export default [
         badge: {
           color: 'primary',
           text: 'NEW',
-          shape: 'pill'
-        }
+          shape: 'pill',
+        },
       },
       {
         _name: 'CSidebarNavDivider',
-        _class: 'm-2'
+        _class: 'm-2',
       },
       {
         _name: 'CSidebarNavTitle',
-        _children: ['Extras']
+        _children: ['Extras'],
       },
       {
         _name: 'CSidebarNavDropdown',
@@ -205,21 +205,21 @@ export default [
         items: [
           {
             name: 'Login',
-            to: '/pages/login'
+            to: '/pages/login',
           },
           {
             name: 'Register',
-            to: '/pages/register'
+            to: '/pages/register',
           },
           {
             name: 'Error 404',
-            to: '/pages/404'
+            to: '/pages/404',
           },
           {
             name: 'Error 500',
-            to: '/pages/500'
-          }
-        ]
+            to: '/pages/500',
+          },
+        ],
       },
       {
         _name: 'CSidebarNavItem',
@@ -227,7 +227,7 @@ export default [
         href: 'http://coreui.io/vue/',
         icon: { name: 'cil-cloud-download', class: 'text-white' },
         _class: 'bg-success text-white',
-        target: '_blank'
+        target: '_blank',
       },
       {
         _name: 'CSidebarNavItem',
@@ -235,8 +235,8 @@ export default [
         href: 'http://coreui.io/pro/vue/',
         icon: { name: 'cil-layers', class: 'text-white' },
         _class: 'bg-danger text-white',
-        target: '_blank'
-      }
-    ]
-  }
+        target: '_blank',
+      },
+    ],
+  },
 ]

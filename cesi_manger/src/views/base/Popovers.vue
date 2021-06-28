@@ -2,13 +2,13 @@
   <div>
     <CCard>
       <CCardHeader>
-        <CIcon name="cil-justify-center"/>
+        <CIcon name="cil-justify-center" />
         <strong> Bootstrap Popovers</strong>
         <div class="card-header-actions">
-          <a 
-            href="https://coreui.io/vue/docs/directives/popover" 
-            class="card-header-action" 
-            rel="noreferrer noopener" 
+          <a
+            href="https://coreui.io/vue/docs/directives/popover"
+            class="card-header-action"
+            rel="noreferrer noopener"
             target="_blank"
           >
             <small class="text-muted">docs</small>
@@ -23,7 +23,7 @@
                 color="primary"
                 v-c-popover="{
                   header: 'Popover header',
-                  content: 'I am popover content!'
+                  content: 'I am popover content!',
                 }"
               >
                 Click Me
@@ -37,7 +37,7 @@
                 v-c-popover="{
                   header: 'Popover!',
                   content: 'I start <strong>open</strong>',
-                  active: true
+                  active: true,
                 }"
               >
                 Click me
@@ -49,7 +49,7 @@
     </CCard>
     <CCard>
       <CCardHeader>
-        <CIcon name="cil-justify-center"/>
+        <CIcon name="cil-justify-center" />
         <strong> Popovers </strong>
         <small>placement</small>
       </CCardHeader>
@@ -66,7 +66,7 @@
               v-c-popover="{
                 header: 'Popover!',
                 content: `Placement ${placement}`,
-                placement
+                placement,
               }"
             >
               {{ placement }}
@@ -81,15 +81,23 @@
 <script>
 export default {
   name: 'Popovers',
-  data () {
+  data() {
     return {
       placements: [
-        'top-start', 'top', 'top-end',
-        'bottom-start', 'bottom', 'bottom-end',
-        'right-start', 'right', 'right-end',
-        'left-start', 'left', 'left-end'
-      ]
+        'top-start',
+        'top',
+        'top-end',
+        'bottom-start',
+        'bottom',
+        'bottom-end',
+        'right-start',
+        'right',
+        'right-end',
+        'left-start',
+        'left',
+        'left-end',
+      ],
     }
-  }
+  },
 }
 </script>
