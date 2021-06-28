@@ -50,12 +50,12 @@ const routes = [
     name: 'cart',
     component: () => import('../components/Shop/ShoppingCart.vue')
   },
-  /* TODO
+  
   {
     path: '/payment',
     name: 'payment',
     component: () => import('../components/Shop/Payment.vue')
-  },*/
+  },
   {
     path: '/profil',
     name: 'Profil',

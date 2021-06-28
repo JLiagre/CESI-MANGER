@@ -5,3 +5,9 @@
         </v-col>
     </v-footer>
 </template>
+
+<style>
+    .v-footer {
+        margin-top: 50px;
+    }
+</style>
