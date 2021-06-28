@@ -56,6 +56,11 @@ const routes = [
     name: 'payment',
     component: () => import('../components/Shop/Payment.vue')
   },*/
+  {
+    path: '/profil',
+    name: 'Profil',
+    component: () => import('../components/Profil/Profil.vue'),
+  }
 ]
 
 const router = new VueRouter({
