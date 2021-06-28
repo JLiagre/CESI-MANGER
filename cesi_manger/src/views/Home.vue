@@ -12,23 +12,6 @@
       </div>
       <div class="boutonCmd"><v-btn to="/products">Passer commande</v-btn></div>
     </div>
-
-    <div class="btn-group">
-      <v-btn size="lg" height="60" width="200">
-        <v-icon>mdi-login</v-icon>
-        <span>Client</span>
-      </v-btn>
-
-      <v-btn size="lg" height="60" width="200">
-        <v-icon>mdi-login</v-icon>
-        <span>Restaurant</span>
-      </v-btn>
-
-      <v-btn size="lg" height="60" width="200">
-        <v-icon>mdi-login</v-icon>
-        <span>Livreur</span>
-      </v-btn>
-    </div>
     <div class="carrousel">
       <carousel3d-home></carousel3d-home>
       <menu-1></menu-1>
@@ -37,8 +20,8 @@
 </template>
 
 <script>
-import Carousel3dHome from '../components/Carousel3dHome.vue'
-import Menu1 from '../components/Menu1.vue'
+import Carousel3dHome from '../components/Carousel/Carousel3dHome.vue'
+import Menu1 from '../components/Menu/Menu1.vue'
 
 export default {
   name: 'Home',

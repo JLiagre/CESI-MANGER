@@ -5,19 +5,19 @@
         <h3>{{ restaurantName[0] }}</h3>
         <img
           class="plat-img"
-          src="../assets/images/hotdog.jpg"
+          src="../../assets/images/hotdog.jpg"
           alt="chez Jojo plat 1"
         />
         <p>{{ dishesNameJojo[0] }} : {{ priceJojo[0] }}€</p>
         <img
           class="plat-img"
-          src="../assets/images/hotdogvégé.jpg"
+          src="../../assets/images/hotdogvégé.jpg"
           alt="chez Jojo plat 2"
         />
         <p>{{ dishesNameJojo[1] }} : {{ priceJojo[1] }}€</p>
         <img
           class="plat-img"
-          src="../assets/images/hotdogiguess.jpg"
+          src="../../assets/images/hotdogiguess.jpg"
           alt="chez Jojo plat 3"
         />
         <p>{{ dishesNameJojo[2] }} : {{ priceJojo[2] }}€</p>
@@ -26,19 +26,19 @@
         <h3>{{ restaurantName[1] }}</h3>
         <img
           class="plat-img"
-          src="../assets/images/bolognaise.jpg"
+          src="../../assets/images/bolognaise.jpg"
           alt="Caci parfait plat 1"
         />
         <p>{{ dishesNameCaci[0] }} : {{ priceCaci[0] }}€</p>
         <img
           class="plat-img"
-          src="../assets/images/carbonara.jpg"
+          src="../../assets/images/carbonara.jpg"
           alt="Caci parfait plat 2"
         />
         <p>{{ dishesNameCaci[1] }} : {{ priceCaci[1] }}€</p>
         <img
           class="plat-img"
-          src="../assets/images/cannelloni.jpg"
+          src="../../assets/images/cannelloni.jpg"
           alt="Caci parfait plat 3"
         />
         <p>{{ dishesNameCaci[2] }} : {{ priceCaci[2] }}€</p>
@@ -49,19 +49,19 @@
         <h3>{{ restaurantName[2] }}</h3>
         <img
           class="plat-img"
-          src="../assets/images/craquottelégume.jpg"
+          src="../../assets/images/craquottelégume.jpg"
           alt="c'est Sésé plat 1"
         />
         <p>{{ dishesNameSésé[0] }} : {{ priceSésé[0] }}€</p>
         <img
           class="plat-img"
-          src="../assets/images/craquotteclassique.jpg"
+          src="../../assets/images/craquotteclassique.jpg"
           alt="c'est Sésé plat 2"
         />
         <p>{{ dishesNameSésé[1] }} : {{ priceSésé[1] }}€</p>
         <img
           class="plat-img"
-          src="../assets/images/festinafricain.jpg"
+          src="../../assets/images/festinafricain.jpg"
           alt="c'est Sésé plat 3"
         />
         <p>{{ dishesNameSésé[2] }} : {{ priceSésé[2] }}€</p>
@@ -70,19 +70,19 @@
         <h3>{{ restaurantName[3] }}</h3>
         <img
           class="plat-img"
-          src="../assets/images/bibimbap.jpg"
+          src="../../assets/images/bibimbap.jpg"
           alt="bon Bardon plat 1"
         />
         <p>{{ dishesNameBardon[0] }} : {{ priceBardon[0] }}€</p>
         <img
           class="plat-img"
-          src="../assets/images/ddeokbokki.jpg"
+          src="../../assets/images/ddeokbokki.jpg"
           alt="bon Bardon plat 1"
         />
         <p>{{ dishesNameBardon[1] }} : {{ priceBardon[1] }}€</p>
         <img
           class="plat-img"
-          src="../assets/images/bbqcoréen.jpg"
+          src="../../assets/images/bbqcoréen.jpg"
           alt="bon Bardon plat 1"
         />
         <p>{{ dishesNameBardon[2] }} : {{ priceBardon[2] }}€</p>
@@ -93,19 +93,19 @@
         <h3>{{ restaurantName[4] }}</h3>
         <img
           class="plat-img"
-          src="../assets/images/pizza.jpg"
+          src="../../assets/images/pizza.jpg"
           alt="CES'Eat plat 1"
         />
         <p>{{ dishesNameCES[0] }} : {{ priceCES[0] }}€</p>
         <img
           class="plat-img"
-          src="../assets/images/burger.jpg"
+          src="../../assets/images/burger.jpg"
           alt="CES'Eat plat 2"
         />
         <p>{{ dishesNameCES[1] }} : {{ priceCES[1] }}€</p>
         <img
           class="plat-img"
-          src="../assets/images/spécialvincent.jpg"
+          src="../../assets/images/spécialvincent.jpg"
           alt="CES'Eat plat 3"
         />
         <p>{{ dishesNameCES[2] }} : {{ priceCES[2] }}€</p>
@@ -114,19 +114,19 @@
         <h3>{{ restaurantName[5] }}</h3>
         <img
           class="plat-img"
-          src="../assets/images/salade1.jpg"
+          src="../../assets/images/salade1.jpg"
           alt="pif plat 1"
         />
         <p>{{ dishesNameBar[0] }} : {{ priceBar[0] }}€</p>
         <img
           class="plat-img"
-          src="../assets/images/salade2.jpg"
+          src="../../assets/images/salade2.jpg"
           alt="pif plat 2"
         />
         <p>{{ dishesNameBar[1] }} : {{ priceBar[1] }}€</p>
         <img
           class="plat-img"
-          src="../assets/images/salade3.jpg"
+          src="../../assets/images/salade3.jpg"
           alt="pif plat 3"
         />
         <p>{{ dishesNameBar[2] }} : {{ priceBar[2] }}€</p>
