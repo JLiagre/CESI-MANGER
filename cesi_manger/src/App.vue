@@ -3,6 +3,7 @@
     <my-header></my-header>
     <router-view></router-view>
     <my-footer></my-footer>
+    <notifications group="foo" />
   </v-app>
 </template>
 

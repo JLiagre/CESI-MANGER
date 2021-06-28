@@ -4,12 +4,12 @@
         <div class="row">    
             <div class="col">
                 <div class="delete-btn">
-                    <button class="btn btn-primary" @click="AccDelete()">Supprimer</button>
+                    <button class="btn btn-primary" @click="notif()">Supprimer</button>
                 </div>
             </div>
             <div class="col">
                 <div class="freeze-btn">
-                    <button class="btn btn-primary" @click="AccFreeze()">Geler</button>
+                    <button class="btn btn-primary" @click="notif()">Geler</button>
                 </div>  
             </div> 
         </div> 
@@ -18,16 +18,13 @@
 
 <script>
 export default {
-    name: 'acc-suppression',
-    //messageDelete: "Êtes-vous sûr de vouloir supprimer votre compte ? Geler ce dernier désactivera votre compte tout en vous premettant de le récupérer plus tard",
-    //messageFreeze: "Êtes-vous sûr de vouloir geler votre comptre ?",
-
     methods: {
-        AccDelete() {
-            alert('Votre demande de suppression à bien été reçue.')
-        },
-        AccFreeze() {
-            alert('votre demande de gèle à bien été reçue. Au revoir et à bientôt :)')
+        notif () {
+            this.$notify({
+                group: 'foo',
+                title: 'Validation',
+                text: 'Votre demande a bien été prise en compte, nos équipes s\'en charge le plus rapidement possible.',
+        })
         }
     }
 }

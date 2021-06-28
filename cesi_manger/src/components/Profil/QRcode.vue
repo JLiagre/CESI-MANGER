@@ -15,7 +15,6 @@
                     placeholder="Type to generate..."
                     v-model="text"
                 />
-                <h6 class="msg-reduc">Obtenez -10% sur votre prochaine commande !</h6>
             </div>
         </div>
     </div>
