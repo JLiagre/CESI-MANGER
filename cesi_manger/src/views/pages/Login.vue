@@ -9,26 +9,31 @@
                 <CForm>
                   <h1>Login</h1>
                   <p class="text-muted">Sign In to your account</p>
-                  <CInput
-                    placeholder="Username"
-                    autocomplete="username email"
-                  >
-                    <template #prepend-content><CIcon name="cil-user"/></template>
+                  <CInput placeholder="Username" autocomplete="username email">
+                    <template #prepend-content
+                      ><CIcon name="cil-user"
+                    /></template>
                   </CInput>
                   <CInput
                     placeholder="Password"
                     type="password"
                     autocomplete="curent-password"
                   >
-                    <template #prepend-content><CIcon name="cil-lock-locked"/></template>
+                    <template #prepend-content
+                      ><CIcon name="cil-lock-locked"
+                    /></template>
                   </CInput>
                   <CRow>
                     <CCol col="6" class="text-left">
                       <CButton color="primary" class="px-4">Login</CButton>
                     </CCol>
                     <CCol col="6" class="text-right">
-                      <CButton color="link" class="px-0">Forgot password?</CButton>
-                      <CButton color="link" class="d-lg-none">Register now!</CButton>
+                      <CButton color="link" class="px-0"
+                        >Forgot password?</CButton
+                      >
+                      <CButton color="link" class="d-lg-none"
+                        >Register now!</CButton
+                      >
                     </CCol>
                   </CRow>
                 </CForm>
@@ -42,12 +47,11 @@
             >
               <CCardBody>
                 <h2>Sign up</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <CButton
-                  color="light"
-                  variant="outline"
-                  size="lg"
-                >
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <CButton color="light" variant="outline" size="lg">
                   Register Now!
                 </CButton>
               </CCardBody>
@@ -61,6 +65,6 @@
 
 <script>
 export default {
-  name: 'Login'
+  name: 'Login',
 }
 </script>
