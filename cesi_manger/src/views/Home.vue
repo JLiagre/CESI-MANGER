@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Carousel3dHome from '../components/Carousel3dHome.vue'
-import Menu1 from '../components/Menu1.vue'
+import Carousel3dHome from '../components/Carousel/Carousel3dHome.vue'
+import Menu1 from '../components/Menu/Menu1.vue'
 
 export default {
   name: 'Home',
