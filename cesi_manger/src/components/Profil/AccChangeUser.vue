@@ -1,5 +1,5 @@
 <template>
-  <div class="acc-form" v-if="(userClient = true)">
+  <div class="acc-form">
     <h2 class="change-acc-name">Modifier mon compte</h2>
     <form v-on:submit.prevent="submitForm">
       <h5>Compte</h5>
