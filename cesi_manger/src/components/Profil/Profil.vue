@@ -2,8 +2,8 @@
     <v-main>
         <acc-change-user v-if="userClient = true"></acc-change-user>
         <acc-supp></acc-supp>
-        <acc-change-restaurant v-if="userRestaurant = false"></acc-change-restaurant>
-        <acc-change-delivery v-if="userDelivery = false"></acc-change-delivery>
+        <acc-change-restaurant v-if="userRestaurant = true"></acc-change-restaurant>
+        <acc-change-delivery v-if="userDelivery = true"></acc-change-delivery>
         <qr-code></qr-code>
     </v-main>        
 </template>
@@ -27,8 +27,8 @@ export default {
     data() {
         return {
             userClient: true,
-            userRestaurant: false,
-            userDelivery: false,
+            userRestaurant: true,
+            userDelivery: true,
         };
     }
 }

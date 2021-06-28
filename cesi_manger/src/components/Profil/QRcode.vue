@@ -27,7 +27,7 @@ import QrcodeVue from 'qrcode.vue'
     data() {
         return {
             value: "JLI27062021",
-            size: 300,
+            size: 200,
         }
     },
     components: {

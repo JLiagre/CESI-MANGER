@@ -50,6 +50,7 @@
 </template>
 
 <script>
+//import axios from 'axios'
 export default {
     name: 'MenuChangeForm',
     data(){
@@ -68,7 +69,19 @@ export default {
                 group: 'foo',
                 title: 'Menu modifié',
             })
-        }
+        },
+        /*submitForm(){
+            axios.post('/contact', this.form)
+                 .then((res) => {
+                     //Perform Success Action
+                 })
+                 .catch((error) => {
+                     // error.response.status Check status code
+                 }).finally(() => {
+                     //Perform action in always
+                 });
+        }*/
+
     }
 }
 </script>

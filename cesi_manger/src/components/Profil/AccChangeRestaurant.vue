@@ -98,6 +98,7 @@
 </template>
 
 <script>
+//import axios from 'axios'
 export default {
     name: 'AccChangeRestaurant',
     data(){
@@ -122,8 +123,19 @@ export default {
                 group: 'foo',
                 title: 'Validation',
                 text: 'Votre demande a bien été prise en compte, nos équipes s\'en charge le plus rapidement possible.',
-        })
-        }
+            })
+        },
+        /*submitForm(){
+            axios.post('/contact', this.form)
+                 .then((res) => {
+                     //Perform Success Action
+                 })
+                 .catch((error) => {
+                     // error.response.status Check status code
+                 }).finally(() => {
+                     //Perform action in always
+                 });
+        }*/
     }
 }
 </script>
