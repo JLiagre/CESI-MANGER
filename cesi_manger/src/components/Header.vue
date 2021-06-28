@@ -7,7 +7,7 @@
                     alt="CESI'EAT Logo"
                     class="shrink-mr-2"
                     contain
-                    src="@/assets/cesi-manger-logo.png"
+                    src="@/assets/images/cesi-manger-logo.png"
                     ></v-img>
                 </v-btn>
             </div>
@@ -26,6 +26,7 @@
             <v-btn v-if="$route.name != 'home' && connectedUser != false" to="/cart">Panier</v-btn>
             <v-btn v-if="$route.name == 'home' && connectedUser != true" to="/login">Connexion</v-btn>
             <v-btn v-if="$route.name == 'home' && connectedUser != true" to="/signup">Créer un compte</v-btn>
+            <v-btn v-if="connectedUser != false" to="/profil">Profil</v-btn>
         </v-app-bar>
     </v-card>
 </template>
@@ -58,5 +59,16 @@
 
     .v-app-bar-title .v-input__control {
         margin-top: 20px;
+    }
+
+    .v-app-bar-title__content {
+        width: 140px;
+    }
+
+    .app-name {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        text-align: center; 
     }
 </style>
