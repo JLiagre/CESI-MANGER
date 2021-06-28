@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-//import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +32,24 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/About.vue'),
+  },
+  //
+  // Les commandes
+  //
+  {
+    path: '/products',
+    name: 'products',
+    component: () => import('../components/Shop/Products.vue'),
+  },
+  {
+    path: '/product/:id',
+    name: 'product',
+    component: () => import('../components/Shop/Product.vue'),
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: () => import('../components/Shop/ShoppingCart.vue'),
   },
   {
     path: '/profil',
