@@ -17,25 +17,25 @@ export default {
     ...CChartLine.props,
     borderColor: {
       type: String,
-      default: 'rgba(255,255,255,.55)'
+      default: 'rgba(255,255,255,.55)',
     },
     backgroundColor: {
       type: String,
-      default: 'transparent'
+      default: 'transparent',
     },
     dataPoints: {
       type: Array,
-      default: () => [10, 22, 34, 46, 58, 70, 46, 23, 45, 78, 34, 12]
+      default: () => [10, 22, 34, 46, 58, 70, 46, 23, 45, 78, 34, 12],
     },
     label: {
       type: String,
-      default: 'Sales'
+      default: 'Sales',
     },
     pointed: Boolean,
-    pointHoverBackgroundColor: String
+    pointHoverBackgroundColor: String,
   },
   computed: {
-    pointHoverColor () {
+    pointHoverColor() {
       if (this.pointHoverBackgroundColor) {
         return this.pointHoverBackgroundColor
       } else if (this.backgroundColor !== 'transparent') {
@@ -43,7 +43,7 @@ export default {
       }
       return this.borderColor
     },
-    defaultDatasets () {
+    defaultDatasets() {
       return [
         {
           data: this.dataPoints,
@@ -51,11 +51,11 @@ export default {
           backgroundColor: getColor(this.backgroundColor),
           pointBackgroundColor: getColor(this.pointHoverColor),
           pointHoverBackgroundColor: getColor(this.pointHoverColor),
-          label: this.label
-        }
+          label: this.label,
+        },
       ]
     },
-    pointedOptions () {
+    pointedOptions() {
       return {
         scales: {
           xAxes: [
@@ -63,13 +63,13 @@ export default {
               offset: true,
               gridLines: {
                 color: 'transparent',
-                zeroLineColor: 'transparent'
+                zeroLineColor: 'transparent',
               },
               ticks: {
                 fontSize: 2,
-                fontColor: 'transparent'
-              }
-            }
+                fontColor: 'transparent',
+              },
+            },
           ],
           yAxes: [
             {
@@ -77,60 +77,64 @@ export default {
               ticks: {
                 display: false,
                 min: Math.min.apply(Math, this.dataPoints) - 5,
-                max: Math.max.apply(Math, this.dataPoints) + 5
-              }
-            }
-          ]
+                max: Math.max.apply(Math, this.dataPoints) + 5,
+              },
+            },
+          ],
         },
         elements: {
           line: {
-            borderWidth: 1
+            borderWidth: 1,
           },
           point: {
             radius: 4,
             hitRadius: 10,
-            hoverRadius: 4
-          }
-        }
+            hoverRadius: 4,
+          },
+        },
       }
     },
-    straightOptions () {
+    straightOptions() {
       return {
         scales: {
-          xAxes: [{
-            display: false
-          }],
-          yAxes: [{
-            display: false
-          }]
+          xAxes: [
+            {
+              display: false,
+            },
+          ],
+          yAxes: [
+            {
+              display: false,
+            },
+          ],
         },
         elements: {
           line: {
-            borderWidth: 2
+            borderWidth: 2,
           },
           point: {
             radius: 0,
             hitRadius: 10,
-            hoverRadius: 4
-          }
-        }
+            hoverRadius: 4,
+          },
+        },
       }
     },
-    defaultOptions () {
+    defaultOptions() {
       const options = this.pointed ? this.pointedOptions : this.straightOptions
       return Object.assign({}, options, {
         maintainAspectRatio: false,
         legend: {
-          display: false
-        }
+          display: false,
+        },
       })
     },
-    computedDatasets () {
+    computedDatasets() {
       return deepObjectsMerge(this.defaultDatasets, this.datasets || {})
     },
-    computedOptions () {
+    computedOptions() {
       return deepObjectsMerge(this.defaultOptions, this.options || {})
-    }
-  }
+    },
+  },
 }
 </script>

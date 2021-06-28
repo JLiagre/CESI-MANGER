@@ -2,12 +2,12 @@
   <div>
     <CCard>
       <CCardHeader>
-        <CIcon name="cil-justify-center"/><strong> Bootstrap Navs</strong>
+        <CIcon name="cil-justify-center" /><strong> Bootstrap Navs</strong>
         <div class="card-header-actions">
-          <a 
-            href="https://coreui.io/vue/docs/components/nav" 
-            class="card-header-action" 
-            rel="noreferrer noopener" 
+          <a
+            href="https://coreui.io/vue/docs/components/nav"
+            class="card-header-action"
+            rel="noreferrer noopener"
             target="_blank"
           >
             <small class="text-muted">docs</small>
@@ -17,7 +17,7 @@
       <CCardBody>
         <CNav>
           <CNavItem active>Active</CNavItem>
-          <CNavItem title="Link"/>
+          <CNavItem title="Link" />
           <CNavItem>Another Link</CNavItem>
           <CNavItem disabled>Disabled</CNavItem>
         </CNav>
@@ -25,51 +25,45 @@
     </CCard>
     <CCard>
       <CCardHeader>
-        <CIcon name="cil-justify-center"/>
+        <CIcon name="cil-justify-center" />
         <strong> Bootstrap Navs </strong>
         <small>icons</small>
       </CCardHeader>
       <CCardBody>
         <CNav variant="pills">
           <CNavItem active>
-            <CIcon name="cil-basket"/>
+            <CIcon name="cil-basket" />
           </CNavItem>
           <CNavItem>
-            <CIcon name="cil-settings"/>
+            <CIcon name="cil-settings" />
           </CNavItem>
           <CNavItem>
-            <CIcon name="cil-bell"/>
+            <CIcon name="cil-bell" />
           </CNavItem>
           <CNavItem disabled>
-            <CIcon name="cil-envelope-closed"/>
+            <CIcon name="cil-envelope-closed" />
           </CNavItem>
         </CNav>
       </CCardBody>
     </CCard>
     <CCard>
       <CCardHeader>
-        <CIcon name="cil-justify-center"/>
+        <CIcon name="cil-justify-center" />
         <strong> Bootstrap Navs </strong>
         <small>tab style</small>
       </CCardHeader>
       <CCardBody>
         <CNav variant="tabs">
-          <CNavItem active>
-            Active
-          </CNavItem>
-          <CNavItem>
-            Link
-          </CNavItem>
-          <CNavItem>
-            Another Link
-          </CNavItem>
+          <CNavItem active> Active </CNavItem>
+          <CNavItem> Link </CNavItem>
+          <CNavItem> Another Link </CNavItem>
           <CNavItem disabled>Disabled</CNavItem>
         </CNav>
       </CCardBody>
     </CCard>
     <CCard>
       <CCardHeader @click="item++">
-        <CIcon name="cil-justify-center"/>
+        <CIcon name="cil-justify-center" />
         <strong> Bootstrap Navs </strong>
         <small>pill style</small>
       </CCardHeader>
@@ -84,7 +78,7 @@
     </CCard>
     <CCard>
       <CCardHeader>
-        <CIcon name="cil-justify-center"/>
+        <CIcon name="cil-justify-center" />
         <strong> Bootstrap Navs </strong>
         <small>fill tabs</small>
       </CCardHeader>
@@ -99,7 +93,7 @@
     </CCard>
     <CCard>
       <CCardHeader>
-        <CIcon name="cil-justify-center"/>
+        <CIcon name="cil-justify-center" />
         <strong> Bootstrap Navs </strong>
         <small>justified tabs</small>
       </CCardHeader>
@@ -114,7 +108,7 @@
     </CCard>
     <CCard>
       <CCardHeader>
-        <CIcon name="cil-justify-center"/>
+        <CIcon name="cil-justify-center" />
         <strong> Bootstrap Navs </strong>
         <small>dropdown support</small>
       </CCardHeader>
@@ -122,14 +116,10 @@
         <CNav variant="pills">
           <CNavItem>Active</CNavItem>
           <CNavItem>Link</CNavItem>
-          <CDropdown
-            in-nav
-            placement="bottom-end"
-            button-content="Dropdown"
-          >
+          <CDropdown in-nav placement="bottom-end" button-content="Dropdown">
             <CDropdownItem>one</CDropdownItem>
             <CDropdownItem>two</CDropdownItem>
-            <CDropdownDivider/>
+            <CDropdownDivider />
             <CDropdownItem>three</CDropdownItem>
           </CDropdown>
         </CNav>
@@ -137,14 +127,14 @@
     </CCard>
     <CCard>
       <CCardHeader>
-        <CIcon name="cil-justify-center"/>
+        <CIcon name="cil-justify-center" />
         <strong> Bootstrap Navs </strong>
         <small>vertical variation</small>
       </CCardHeader>
       <CCardBody>
         <CRow>
           <CCol col="12" class="m-0">
-            <CNav vertical="lg" pills >
+            <CNav vertical="lg" pills>
               <CNavItem active>Active</CNavItem>
               <CNavItem>Link</CNavItem>
               <CNavItem>Another Link</CNavItem>
@@ -159,6 +149,6 @@
 
 <script>
 export default {
-  name: 'Navs'
+  name: 'Navs',
 }
 </script>

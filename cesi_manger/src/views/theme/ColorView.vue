@@ -1,14 +1,14 @@
 <template>
   <table class="w-100">
     <tbody>
-    <tr>
-      <td class="text-muted">HEX:</td>
-      <td class="font-weight-bold">{{this.hexColor}}</td>
-    </tr>
-    <tr>
-      <td class="text-muted">RGB:</td>
-      <td class="font-weight-bold">{{this.bgColor}}</td>
-    </tr>
+      <tr>
+        <td class="text-muted">HEX:</td>
+        <td class="font-weight-bold">{{ this.hexColor }}</td>
+      </tr>
+      <tr>
+        <td class="text-muted">RGB:</td>
+        <td class="font-weight-bold">{{ this.bgColor }}</td>
+      </tr>
     </tbody>
   </table>
 </template>
@@ -17,25 +17,27 @@
 import { rgbToHex } from '@coreui/utils/src'
 export default {
   name: 'ColorView',
-  data () {
+  data() {
     return {
-      bgColor: 'rgb(255, 255, 255)'
+      bgColor: 'rgb(255, 255, 255)',
     }
   },
   computed: {
-    hexColor () {
+    hexColor() {
       return rgbToHex(this.bgColor)
-    }
+    },
   },
   methods: {
-    setColor () {
+    setColor() {
       const elem = this.$parent.$el.children[0]
-      const color = window.getComputedStyle(elem).getPropertyValue('background-color')
+      const color = window
+        .getComputedStyle(elem)
+        .getPropertyValue('background-color')
       this.bgColor = color || this.bgColor
-    }
+    },
   },
-  mounted () {
+  mounted() {
     this.setColor()
-  }
+  },
 }
 </script>

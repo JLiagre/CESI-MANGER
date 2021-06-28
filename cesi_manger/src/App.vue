@@ -24,67 +24,65 @@ export default {
 </script>
 
 <style lang="scss">
+// Homepage
+//
+.btn-group {
+  display: flex;
+  align-items: center;
+  text-align: center;
 
-  // Homepage
-  //
-  .btn-group {
-    display: flex;
-    align-items: center;
-    text-align: center;
+  margin-top: 20vh;
+  //margin-left: auto;
+  //margin-right: auto;
+  //width: 6em;
+}
 
-    margin-top: 20vh;
-    //margin-left: auto;
-    //margin-right: auto;
-    //width: 6em;
-  };
+#app {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
 
-  #app {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    width: 100%
-  };
+// Login page
+.login-form-group {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 30vh;
+  width: 100%;
+}
 
-  // Login page
-  .login-form-group {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin-top: 30vh;
-    width: 100%;
-  }
+.login-form-group form {
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .login-form-group form {
-    margin-left: auto;
-    margin-right: auto;
-  }
+// Register page
+.register-form-group {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 30vh;
+  width: 100%;
+}
 
-  // Register page
-  .register-form-group {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin-top: 30vh;
-    width: 100%;
-  }
+.register-form-group form {
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .register-form-group form {
-    margin-left: auto;
-    margin-right: auto;
-  }
+// Forgot password group
+.forgot-password-group {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 30vh;
+  width: 100%;
+}
 
-  // Forgot password group
-  .forgot-password-group {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin-top: 30vh;
-    width: 100%;
-  }
-
-  .forgot-password-group form {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
+.forgot-password-group form {
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>
