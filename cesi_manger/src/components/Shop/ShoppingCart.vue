@@ -23,12 +23,12 @@
                                 <td class="prices">{{ product.product_price }}</td>
                                 <td>{{ product.product_quantity }}</td>
                                 <td class="prices">{{ product.product_price * product.product_quantity  }}</td>
-                                <td><button class="btn btn-danger btn-block" v-on:click="onDelete($index)"><i class="fa fa-trash-o fa-lg"></i></button></td>
+                                <td><v-btn small class="btn btn-danger btn-block" v-on:click="onDelete($index)"><i class="fa fa-trash"></i></v-btn></td>
                             </tr>
                             <tr>
-                                <td colspan="3"></td>
+                                <td colspan="4"></td>
                                 <td class="prices"><strong>{{ total }}</strong></td>
-                                <td colspan="2"></td>
+                                <td><v-btn small class="btn btn-success btn-block" to="/payment"><i class="fa fa-shopping-cart"></i></v-btn></td>
                             </tr>
                         </tbody>
                     </table>
@@ -79,4 +79,5 @@ export default {
     .cart td.prices:after {
         content: ' €';
     }
+
 </style>
