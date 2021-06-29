@@ -57,6 +57,11 @@ const routes = [
     component: () => import('../components/Shop/Payment.vue'),
   },
   {
+    path: '/orders',
+    name: 'orders',
+    component: () => import('../components/Shop/OrderTracker.vue'),
+  },
+  {
     path: '/profil',
     name: 'Profil',
     component: () => import('../components/Profil/Profil.vue'),
