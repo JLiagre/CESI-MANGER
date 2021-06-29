@@ -46,6 +46,11 @@ const routes = [
     component: () => import('../components/Shop/Product.vue'),
   },
   {
+    path: '/menu/:id',
+    name: 'menu',
+    component: () => import('../components/Shop/Menu.vue'),
+  },
+  {
     path: '/cart',
     name: 'cart',
     component: () => import('../components/Shop/ShoppingCart.vue'),
@@ -60,6 +65,11 @@ const routes = [
     path: '/profil',
     name: 'Profil',
     component: () => import('../components/Profil/Profil.vue'),
+  },
+  {
+    path: '/statscommandes',
+    name: 'Statistiques',
+    component: () => import('../components/Stats/Commandes.vue'),
   },
 ]
 
