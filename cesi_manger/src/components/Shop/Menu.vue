@@ -20,17 +20,17 @@
               <tr>
                 <td>Pate</td>
                 <td>1</td>
-                <td><del>10€</del>  8€</td>
+                <td><del>10€</del> 8€</td>
               </tr>
               <tr>
                 <td>Boisson</td>
                 <td>2</td>
-                <td><del>5€</del>  4€</td>
+                <td><del>5€</del> 4€</td>
               </tr>
               <tr>
                 <td>Dessert</td>
                 <td>2</td>
-                <td><del>5€</del>  4€</td>
+                <td><del>5€</del> 4€</td>
               </tr>
               <tr>
                 <td>TOTAL</td>

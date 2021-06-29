@@ -1,16 +1,29 @@
 <template>
   <div class="login-form-group">
-    <form>
+    <ul v-if="errors && errors.length">
+      {{
+        errors
+      }}
+    </ul>
+    <form v-on:submit="logUser">
       <h3>Sign In</h3>
 
       <div class="form-group">
-        <label>Email address</label>
-        <input type="email" class="form-control form-control-lg" />
+        <label>Username</label>
+        <input
+            type="string"
+            name="username"
+            class="form-control form-control-lg"
+        />
       </div>
 
       <div class="form-group">
         <label>Password</label>
-        <input type="password" class="form-control form-control-lg" />
+        <input
+            type="password"
+            name="password"
+            class="form-control form-control-lg"
+        />
       </div>
 
       <button type="submit" class="btn btn-dark btn-lg btn-block">
@@ -25,9 +38,23 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
+
 export default {
-  data() {
-    return {}
-  },
+  name: 'Login',
+
+  methods: {
+    ...mapActions(['login']),
+    async logUser(e) {
+      e.preventDefault();
+      console.log(e.target.elements.username.value);
+      console.log(e.target.elements.password.value);
+      let data = {
+        username: e.target.elements.username.value,
+        password: e.target.elements.password.value,
+      };
+     await this.login(data);
+      }
+    },
 }
 </script>

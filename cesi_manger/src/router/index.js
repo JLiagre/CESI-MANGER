@@ -28,6 +28,12 @@ const routes = [
     component: () => import('../components/Auth/ForgotPassword.vue'),
   },
   {
+    path: '/authcallback',
+    name: 'authcallback',
+    props: true,
+    component: () => import('../components/Auth/AuthCallback.vue'),
+  },
+  {
     path: '/about',
     name: 'About',
     component: () => import('../views/About.vue'),

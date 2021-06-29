@@ -1,16 +1,39 @@
-import Vue from 'vue'
 import Vuex from 'vuex'
+import Vue from 'vue'
+import axios from 'axios'
+import router from '../router';
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state: {
-    user: null,
+    user: {},
+    connected: false,
   },
-  getters: {
-    jwt: (state) => (state.user ? state.user.jwt : null),
+  getters: {},
+  mutations: {
+    // mutating your user state
+    isconnected() {
+      console.log('OKEEEEE')
+      this.state.connected = !this.state.connected
+    },
   },
-  mutations: {},
-  actions: {},
-  modules: {},
+  actions: {
+    async login(context, credentials) {
+      return axios
+        .post('api/auth', credentials)
+        .then(() => {
+          // console.log(response);
+          context.commit("isconnected")
+          router.push({name: 'Profil'});
+        })
+        .catch(function (error) {
+          // handle error
+          console.log('nope')
+          console.log(error)
+        })
+    },
+  },
+
 })
+export default store
