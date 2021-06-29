@@ -2,50 +2,152 @@
     <div>
         <div v-if="connectedDelivery != false">
             <h2 class="take-title">Prise en charge de commande</h2>
+            <p>Votre ID : {{delivery_id}}</p>
             <div class="row">
-                <h4>Liste commandes :</h4>
                 <div class="col">
-                    <p>
-                        Commande n° : {{references[0]}}
-                    </p>
-                    <button class="btn btn-primary" @click="notify()">Prendre en charge</button>
+                    <form v-on:submit.prevent="submitForm">
+                        <div>
+                            <p>
+                                Commande n° : {{references[0]}}
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="username">ID livreur</label>
+                            <input
+                            type="text"
+                            class="form-control"
+                            id="deliveryID"
+                            placeholder="ID livreur"
+                            v-model="form.username"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <p>Votre ID : {{delivery_id}}</p>
+                            <button class="btn btn-primary" @click="notif()">Prendre en charge</button>
+                        </div>
+                    </form>
                 </div>
                 <div class="col">
-                    <p>
-                        Commande n° : {{references[1]}}
-                    </p>
-                    <button class="btn btn-primary" @click="notify()">Prendre en charge</button>
+                    <form v-on:submit.prevent="submitForm">
+                        <div>
+                            <p>
+                                Commande n° : {{references[1]}}
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="username">ID livreur</label>
+                            <input
+                            type="text"
+                            class="form-control"
+                            id="deliveryID"
+                            placeholder="ID livreur"
+                            v-model="form.username"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <p>Votre ID : {{delivery_id}}</p>
+                            <button class="btn btn-primary" @click="notif()">Prendre en charge</button>
+                        </div>
+                    </form>
                 </div>
                 <div class="col">
-                    <p>
-                        Commande n° : {{references[2]}}
-                    </p>
-                    <button class="btn btn-primary" @click="notify()">Prendre en charge</button>
+                    <form v-on:submit.prevent="submitForm">
+                        <div>
+                            <p>
+                                Commande n° : {{references[2]}}
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="username">ID livreur</label>
+                            <input
+                            type="text"
+                            class="form-control"
+                            id="deliveryID"
+                            placeholder="ID livreur"
+                            v-model="form.username"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <p>Votre ID : {{delivery_id}}</p>
+                            <button class="btn btn-primary" @click="notif()">Prendre en charge</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <p>
-                        Commande n° : {{references[3]}}
-                    </p>
-                    <button class="btn btn-primary" @click="notify()">Prendre en charge</button>
+                    <form v-on:submit.prevent="submitForm">
+                        <div>
+                            <p>
+                                Commande n° : {{references[3]}}
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="username">ID livreur</label>
+                            <input
+                            type="text"
+                            class="form-control"
+                            id="deliveryID"
+                            placeholder="ID livreur"
+                            v-model="form.username"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <p>Votre ID : {{delivery_id}}</p>
+                            <button class="btn btn-primary" @click="notif()">Prendre en charge</button>
+                        </div>
+                    </form>
                 </div>  
                 <div class="col">
-                    <p>
-                        Commande n° : {{references[4]}}
-                    </p>
-                    <button class="btn btn-primary" @click="notify()">Prendre en charge</button>
+                    <form v-on:submit.prevent="submitForm">
+                        <div>
+                            <p>
+                                Commande n° : {{references[4]}}
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="username">ID livreur</label>
+                            <input
+                            type="text"
+                            class="form-control"
+                            id="deliveryID"
+                            placeholder="ID livreur"
+                            v-model="form.username"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <p>Votre ID : {{delivery_id}}</p>
+                            <button class="btn btn-primary" @click="notif()">Prendre en charge</button>
+                        </div>
+                    </form>
                 </div>
                 <div class="col">
-                    <p>
-                        Commande n° : {{references[5]}}
-                    </p>
-                    <button class="btn btn-primary" @click="notify()">Prendre en charge</button>
+                    <form v-on:submit.prevent="submitForm">
+                        <div>
+                            <p>
+                                Commande n° : {{references[5]}}
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="username">ID livreur</label>
+                            <input
+                            type="text"
+                            class="form-control"
+                            id="deliveryID"
+                            placeholder="ID livreur"
+                            v-model="form.username"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <p>Votre ID : {{delivery_id}}</p>
+                            <button class="btn btn-primary" @click="notif()">Prendre en charge</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
         <div v-if="connectedRestaurant != false">
-            <h4 class="Qr-take-title">QR pour commandes en attentes de prise en charge :</h4>
+            <h2 class="Qr-take-title">QR pour commandes en attentes de prise en charge :</h2>
             <div class="row">
                 <div class="col">
                     <p>Commande n° : {{referencesRestaurant[0]}}</p>
@@ -76,7 +178,7 @@
             </div>
         </div>
         <div v-if="connectedClient != false">
-                <h4 class="Qr-take-title">QR pour reception de commande :</h4>
+                <h2 class="Qr-take-title">QR pour reception de commande :</h2>
                 <div class="row">
                     <div class="col">
                         <p>Commande n° : {{referencesClient[0]}}</p>
@@ -111,6 +213,7 @@
 
 <script>
 import QrcodeVue from 'qrcode.vue'
+//import axios from 'axios'
 
 export default {
     name:'takeOrder',
@@ -120,9 +223,14 @@ export default {
             referencesClient: ["R1cl","R2cl","R3cl","R4cl","R5cl","R6cl"],
             referencesRestaurant: ["R1ra","R2ra","R3ra","R4ra","R5ra","R6ra"],
             size: 100,
-            connectedRestaurant: true,
+            connectedRestaurant: false,
             connectedDelivery: true,
-            connectedClient: true,
+            connectedClient: false,
+            delivery_id: "JDOE01012000",
+            form: {
+                delivery_id: "JDOE01012000",
+                references: '',
+            }
         }
     },
     components:{
@@ -133,19 +241,31 @@ export default {
             this.$notify({
                 group: 'foo',
                 title: 'Association de commande',
-                text: "Vous avez bien été associé à la commande. Nous vous souhaitons un bon trajet et vous demandons de rester prudentlors de votre livraison",
+                text: "Vous avez bien été associé à la commande. Nous vous souhaitons un bon trajet et vous demandons de rester prudent lors de votre livraison",
             })
         },
+        /*submitForm(){
+            axios.post('/contact', this.form)
+                 .then((res) => {
+                     //Perform Success Action
+                 })
+                 .catch((error) => {
+                     // error.response.status Check status code
+                 }).finally(() => {
+                     //Perform action in always
+                 });
+        }*/
     },
 }
 </script>
 
 <style>
     .take-title{
+        padding-top: 2em;
         font-weight: bold;
     }
     .Qr-take-title{
-        padding-top: 2em;
+        padding-top: 1em;
         
     }
 </style>

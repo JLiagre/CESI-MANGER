@@ -15,6 +15,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "core-js": "^3.6.5",
+    "html2pdf.js": "^0.9.3",
     "mosha-vue-toastify": "^1.0.13",
     "qrcode": "^1.4.4",
     "qrcode.vue": "^1.7.0",
