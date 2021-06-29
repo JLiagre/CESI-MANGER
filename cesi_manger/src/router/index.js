@@ -15,17 +15,17 @@ const routes = [
   {
     path: '/signup',
     name: 'signup',
-    component: () => import('../components/Auth/Signup.vue')
+    component: () => import('../components/Auth/Signup.vue'),
   },
   {
     path: '/login',
     name: 'login',
-    component: () => import('../components/Auth/Login.vue')
+    component: () => import('../components/Auth/Login.vue'),
   },
   {
     path: '/forgot-password',
     name: 'forgot-password',
-    component: () => import('../components/Auth/ForgotPassword.vue')
+    component: () => import('../components/Auth/ForgotPassword.vue'),
   },
   {
     path: '/about',
@@ -48,19 +48,19 @@ const routes = [
   {
     path: '/cart',
     name: 'cart',
-    component: () => import('../components/Shop/ShoppingCart.vue')
+    component: () => import('../components/Shop/ShoppingCart.vue'),
   },
-  
+
   {
     path: '/payment',
     name: 'payment',
-    component: () => import('../components/Shop/Payment.vue')
+    component: () => import('../components/Shop/Payment.vue'),
   },
   {
     path: '/profil',
     name: 'Profil',
     component: () => import('../components/Profil/Profil.vue'),
-  }
+  },
 ]
 
 const router = new VueRouter({

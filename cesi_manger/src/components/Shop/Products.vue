@@ -1,39 +1,54 @@
 <template>
-    <div class="products">
-        <h3>Produits</h3>
-        <div class="card mt-5">
-            <div class="card-header">Liste des produits</div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th>Nom</th>
-                                <th>Prix</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="product in products" v-bind:key="product.id">
-                                <template>
-                                    <td>{{ product.product_id }}</td>
-                                    <td>{{ product.product_name }}</td>
-                                    <td class="prices">{{ product.product_price }}</td>
-                                    <td>
-                                        <a href="/product" class="icon">
-                                            <i class="fa fa-eye"></i>
-                                        </a>
-                                        <v-btn small class="btn btn-success btn-block" v-on:click="onAddToCart(product.id)"><i class="fa fa-shopping-cart"></i></v-btn >
-                                        <v-btn small class="btn btn-warning btn-block" v-on:click="onEdit(product)"><i class="fa fa-pencil"></i></v-btn >
-                                        <v-btn small class="btn btn-danger btn-block" v-on:click="onDelete(product.id)"><i class="fa fa-trash"></i></v-btn >
-                                    </td>
-                                </template>
-                            </tr>
-                            <!-- ******************************************* -->
-                            <!-- Ici j'ai préparé le code pour lier à la BDD -->
-                            <!-- ******************************************* -->
-                            <!-- <tr v-for="product in sortedProducts" v-bind:key="product.id">
+  <div class="products">
+    <h3>Produits</h3>
+    <div class="card mt-5">
+      <div class="card-header">Liste des produits</div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="product in products" v-bind:key="product.id">
+                <template>
+                  <td>{{ product.product_id }}</td>
+                  <td>{{ product.product_name }}</td>
+                  <td class="prices">{{ product.product_price }}</td>
+                  <td>
+                    <a href="/product" class="icon">
+                      <i class="fa fa-eye"></i>
+                    </a>
+                    <v-btn
+                      small
+                      class="btn btn-success btn-block"
+                      v-on:click="onAddToCart(product.id)"
+                      ><i class="fa fa-shopping-cart"></i
+                    ></v-btn>
+                    <v-btn
+                      small
+                      class="btn btn-warning btn-block"
+                      v-on:click="onEdit(product)"
+                      ><i class="fa fa-pencil"></i
+                    ></v-btn>
+                    <v-btn
+                      small
+                      class="btn btn-danger btn-block"
+                      v-on:click="onDelete(product.id)"
+                      ><i class="fa fa-trash"></i
+                    ></v-btn>
+                  </td>
+                </template>
+              </tr>
+              <!-- ******************************************* -->
+              <!-- Ici j'ai préparé le code pour lier à la BDD -->
+              <!-- ******************************************* -->
+              <!-- <tr v-for="product in sortedProducts" v-bind:key="product.id">
                                 <template v-if="editId == product.id">
                                     <td>
                                         <input v-model="editProductData.product_id" type="text" />
@@ -79,43 +94,39 @@
                                     </td>
                                 </template>
                             </tr> -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            </tbody>
+          </table>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'Products',
+  name: 'Products',
 
-    // Test avec des data fictives
-    //
-    data: () => ({
-        products: [
-            { product_id: 1, product_name: "toto", product_price: 10.99 },
-            { product_id: 2, product_name: "titi", product_price: 5.99 },
-            { product_id: 3, product_name: "tata", product_price: 1.99 }
-        ]
-    }),
-    methods: {
-        onAddToCart() {
-            
-        },
-        onEdit() {
+  // Test avec des data fictives
+  //
+  data: () => ({
+    products: [
+      { product_id: 1, product_name: 'toto', product_price: 10.99 },
+      { product_id: 2, product_name: 'titi', product_price: 5.99 },
+      { product_id: 3, product_name: 'tata', product_price: 1.99 },
+    ],
+  }),
+  methods: {
+    onAddToCart() {},
+    onEdit() {},
+    onDelete(index) {
+      this.products.splice(index, 1)
+    },
+  },
 
-        },
-        onDelete(index) {
-            this.products.splice(index, 1);
-        }
-    }
-    
-    /* *********************************************** */
-    /* Ici j'ai préparé les scripts pour lier à la BDD */
-    /* *********************************************** */
-    /*data () {
+  /* *********************************************** */
+  /* Ici j'ai préparé les scripts pour lier à la BDD */
+  /* *********************************************** */
+  /*data () {
         return {
         editId: '',
         productData: {
@@ -209,22 +220,21 @@ export default {
 </script>
 
 <style scoped>
+.icon {
+  margin-right: 10px;
+}
+.icon i {
+  cursor: pointer;
+}
 
-    .icon {
-        margin-right: 10px;
-    }
-    .icon i {
-        cursor: pointer;
-    }
+.products {
+  width: 80%;
+  margin-top: 15vh;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    .products {
-        width: 80%;
-        margin-top: 15vh;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .products td.prices:after {
-        content: ' €';
-    }
+.products td.prices:after {
+  content: ' €';
+}
 </style>

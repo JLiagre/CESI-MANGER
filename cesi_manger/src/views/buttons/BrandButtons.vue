@@ -5,20 +5,20 @@
         <CCardHeader>
           <strong>Brand Button</strong>
           <div class="card-header-actions">
-              <a 
-                href="https://coreui.io/vue/docs/components/button-components" 
-                class="card-header-action" 
-                rel="noreferrer noopener" 
-                target="_blank"
-              >
-                <small class="text-muted">docs</small>
-              </a>
-            </div>
+            <a
+              href="https://coreui.io/vue/docs/components/button-components"
+              class="card-header-action"
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              <small class="text-muted">docs</small>
+            </a>
+          </div>
         </CCardHeader>
         <CCardBody>
           <small>Usage </small>
           <code>{{ $options.usage }}</code>
-          <hr/>
+          <hr />
           <h6>
             Size Small
             <small>Add <code>size="sm"</code></small>
@@ -32,8 +32,8 @@
                 :color="brandName"
                 class="btn-brand"
               >
-                <CIcon size="sm" :name="'cib-' + brandName"/>
-                <span>{{brandName}}</span>
+                <CIcon size="sm" :name="'cib-' + brandName" />
+                <span>{{ brandName }}</span>
               </CButton>
             </template>
           </p>
@@ -46,12 +46,14 @@
                 :color="brandName"
                 class="btn-brand"
               >
-                <CIcon :name="'cib-' + brandName"/>
-                <span>{{brandName}}</span>
+                <CIcon :name="'cib-' + brandName" />
+                <span>{{ brandName }}</span>
               </CButton>
             </template>
           </p>
-          <h6>Size Large <small>Add <code>size="lg"</code></small></h6>
+          <h6>
+            Size Large <small>Add <code>size="lg"</code></small>
+          </h6>
           <p>
             <template v-for="(brandName, key) in $options.brands">
               <CButton
@@ -61,8 +63,8 @@
                 :color="brandName"
                 class="btn-brand"
               >
-                <CIcon size="lg" :name="'cib-' + brandName"/>
-                <span>{{brandName}}</span>
+                <CIcon size="lg" :name="'cib-' + brandName" />
+                <span>{{ brandName }}</span>
               </CButton>
             </template>
           </p>
@@ -76,9 +78,11 @@
         </CCardHeader>
         <CCardBody>
           <small>Usage </small>
-            <code>{{ $options.iconsOnlyUsage }}</code>
-          <hr/>
-          <h6>Size Small <small>Add <code>size="sm"</code></small></h6>
+          <code>{{ $options.iconsOnlyUsage }}</code>
+          <hr />
+          <h6>
+            Size Small <small>Add <code>size="sm"</code></small>
+          </h6>
           <p>
             <template v-for="(brandName, key) in $options.brands">
               <CButton
@@ -87,23 +91,21 @@
                 :key="key"
                 :color="brandName"
               >
-                <CIcon size="sm" :name="'cib-' + brandName"/>
+                <CIcon size="sm" :name="'cib-' + brandName" />
               </CButton>
             </template>
           </p>
           <h6>Size Normal</h6>
           <p>
             <template v-for="(brandName, key) in $options.brands">
-              <CButton
-                :name="brandName"
-                :key="key"
-                :color="brandName"
-              >
-                <CIcon :name="'cib-' + brandName"/>
+              <CButton :name="brandName" :key="key" :color="brandName">
+                <CIcon :name="'cib-' + brandName" />
               </CButton>
             </template>
           </p>
-          <h6>Size Large <small>Add <code>size="lg"</code></small></h6>
+          <h6>
+            Size Large <small>Add <code>size="lg"</code></small>
+          </h6>
           <p>
             <template v-for="(brandName, key) in $options.brands">
               <CButton
@@ -112,7 +114,7 @@
                 :key="key"
                 :color="brandName"
               >
-                <CIcon size="lg" :name="'cib-' + brandName"/>
+                <CIcon size="lg" :name="'cib-' + brandName" />
               </CButton>
             </template>
           </p>
@@ -126,43 +128,36 @@
           <strong>Brand Button </strong> <small>Text only</small>
         </CCardHeader>
         <CCardBody>
-          <small>Usage </small> 
+          <small>Usage </small>
           <code>
             {{ $options.textOnlyUsage }}
           </code>
-          <hr/>
-          <h6>Size Small <small>Add <code>size="sm"</code></small></h6>
+          <hr />
+          <h6>
+            Size Small <small>Add <code>size="sm"</code></small>
+          </h6>
           <p>
             <template v-for="(brandName, key) in $options.brands">
-              <CButton
-                size="sm"
-                :key="key"
-                :color="brandName"
-              >
-                <span>{{brandName}}</span>
+              <CButton size="sm" :key="key" :color="brandName">
+                <span>{{ brandName }}</span>
               </CButton>
             </template>
           </p>
           <h6>Size Normal</h6>
           <p>
             <template v-for="(brandName, key) in $options.brands">
-              <CButton
-                :key="key"
-                :color="brandName"
-              >
-                <span>{{brandName}}</span>
+              <CButton :key="key" :color="brandName">
+                <span>{{ brandName }}</span>
               </CButton>
             </template>
           </p>
-          <h6>Size Large <small>Add <code>size="lg"</code></small></h6>
+          <h6>
+            Size Large <small>Add <code>size="lg"</code></small>
+          </h6>
           <p>
             <template v-for="(brandName, key) in $options.brands">
-              <CButton
-                size="lg"
-                :key="key"
-                :color="brandName"
-              >
-                <span>{{brandName}}</span>
+              <CButton size="lg" :key="key" :color="brandName">
+                <span>{{ brandName }}</span>
               </CButton>
             </template>
           </p>
@@ -175,8 +170,10 @@
 <script>
 export default {
   name: 'BrandButtons',
-  usage: '<CButton color="facebook"><CIcon name="cib-facebook"/><span>Facebook</span></CButton>',
-  iconsOnlyUsage: '<CButton color="facebook"><CIcon name="cib-facebook"/></CButton>',
+  usage:
+    '<CButton color="facebook"><CIcon name="cib-facebook"/><span>Facebook</span></CButton>',
+  iconsOnlyUsage:
+    '<CButton color="facebook"><CIcon name="cib-facebook"/></CButton>',
   textOnlyUsage: '<CButton color="facebook"><span>Facebook</span></CButton>',
   brands: [
     'facebook',
@@ -195,8 +192,8 @@ export default {
     'yahoo',
     'behance',
     'reddit',
-    'vimeo'
-  ]
+    'vimeo',
+  ],
   // labels: {
   //   facebook: 'Facebook',
   //   twitter: 'Twitter',

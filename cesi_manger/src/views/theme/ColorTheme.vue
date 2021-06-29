@@ -5,7 +5,7 @@
       :style="{ paddingTop: '75%' }"
     ></div>
     <slot></slot>
-    <ColorView/>
+    <ColorView />
   </CCol>
 </template>
 
@@ -16,6 +16,6 @@ export default {
   components: { ColorView },
   props: {
     color: String,
-  }
+  },
 }
 </script>
