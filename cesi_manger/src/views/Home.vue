@@ -1,5 +1,14 @@
 <template>
   <v-main>
+    <vue-splash v-if="!this.$store.state.connected"
+      :show="true"
+      :logo="logo"
+      color="#fff"
+      :size="200"
+      :fixed="true"
+      background-color="#fff"
+      class="splash"
+    />
     <div class="titre">
       <h1>Un petit creux ? Vous êtes au bon endroit !</h1>
       <div class="adresse">
@@ -20,6 +29,7 @@
 
 <script>
 import Carousel3dHome from '../components/Carousel/Carousel3dHome.vue'
+import YourLogo from '../assets/images/final.gif'
 
 export default {
   name: 'Home',
@@ -34,6 +44,11 @@ export default {
       (value) => (value && value.length >= 3) || 'Min 3 caractères',
     ],
   }),
+  computed: {
+    logo() {
+      return YourLogo
+    },
+  },
 }
 </script>
 
@@ -50,5 +65,35 @@ export default {
 
 .boutonCmd {
   margin-top: 10px;
+}
+
+.splash {
+  z-index: 1000;
+  -webkit-animation: cssAnimation 4s forwards;
+  animation: cssAnimation 4s forwards;
+}
+@keyframes cssAnimation {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
 }
 </style>
