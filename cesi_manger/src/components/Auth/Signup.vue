@@ -45,8 +45,19 @@
 
       <div class="form-group">
         <label> Vous êtes ? </label>
-        <select name="userRole" v-model="selected" style="width: 100%; margin-top: 4%; margin-bottom: 4%; padding-top: 4%; padding-bottom: 4%; justify-content: center;border: 2px solid cadetblue;
-          ">
+        <select
+          name="userRole"
+          v-model="selected"
+          style="
+            width: 100%;
+            margin-top: 4%;
+            margin-bottom: 4%;
+            padding-top: 4%;
+            padding-bottom: 4%;
+            justify-content: center;
+            border: 2px solid cadetblue;
+          "
+        >
           <option name="client" value="client">Client</option>
           <option name="livreur" value="livreur">Livreur</option>
           <option name="restaurateur" value="restaurateur">Restaurateur</option>
@@ -120,21 +131,21 @@ export default {
     ...mapActions(['signup']),
     async userSignup(e) {
       e.preventDefault()
-        let data = {
-          username: e.target.elements.username.value,
-          password: e.target.elements.password.value,
-          email: e.target.elements.email.value,
-          city: e.target.elements.city.value,
-          zip: e.target.elements.zip.value,
-          telephone: e.target.elements.telephone.value,
-          country: e.target.elements.country.value,
-          surname: e.target.elements.surname.value,
-          name: e.target.elements.name.value,
-          address: e.target.elements.address.value,
-          userRole: e.target.elements.userRole.value,
-        }
-      await this.signup(data)
+      let data = {
+        username: e.target.elements.username.value,
+        password: e.target.elements.password.value,
+        email: e.target.elements.email.value,
+        city: e.target.elements.city.value,
+        zip: e.target.elements.zip.value,
+        telephone: e.target.elements.telephone.value,
+        country: e.target.elements.country.value,
+        surname: e.target.elements.surname.value,
+        name: e.target.elements.name.value,
+        address: e.target.elements.address.value,
+        userRole: e.target.elements.userRole.value,
       }
+      await this.signup(data)
     },
-  }
+  },
+}
 </script>
