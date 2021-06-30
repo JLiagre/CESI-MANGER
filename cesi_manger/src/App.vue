@@ -18,7 +18,7 @@ export default {
     'my-footer': Footer,
   },
   data: () => ({
-    connectedUser: true,
+    connectedUser: false,
   }),
 }
 </script>

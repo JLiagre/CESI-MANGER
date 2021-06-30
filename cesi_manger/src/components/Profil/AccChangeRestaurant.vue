@@ -1,5 +1,5 @@
 <template>
-  <div class="acc-form" v-if="(userClient = true)">
+  <div class="acc-form">
     <h2 class="change-acc-name">Modifier mon compte</h2>
     <form v-on:submit.prevent="submitForm">
       <div class="form-group">
@@ -89,8 +89,9 @@
             <input
               type="checkbox"
               id="lundi"
-              value="lundi" class="btn-check" 
-              v-model="form.dayopen" 
+              value="lundi"
+              class="btn-check"
+              v-model="form.dayopen"
             />
             <label class="btn btn-outline-success" for="lundi">Lundi</label>
           </div>
@@ -98,7 +99,8 @@
             <input
               type="checkbox"
               id="mardi"
-              value="mardi" class="btn-check"
+              value="mardi"
+              class="btn-check"
               v-model="form.dayopen"
             />
             <label class="btn btn-outline-success" for="mardi">Mardi</label>
@@ -107,16 +109,20 @@
             <input
               type="checkbox"
               id="mercredi"
-              value="mercredi" class="btn-check"
+              value="mercredi"
+              class="btn-check"
               v-model="form.dayopen"
             />
-            <label class="btn btn-outline-success" for="mercredi">Mercredi</label>
+            <label class="btn btn-outline-success" for="mercredi"
+              >Mercredi</label
+            >
           </div>
           <div class="col">
             <input
               type="checkbox"
               id="jeudi"
-              value="jeudi" class="btn-check"
+              value="jeudi"
+              class="btn-check"
               v-model="form.dayopen"
             />
             <label class="btn btn-outline-success" for="jeudi">Jeudi</label>
@@ -125,16 +131,20 @@
             <input
               type="checkbox"
               id="vendredi"
-              value="vendredi" class="btn-check"
+              value="vendredi"
+              class="btn-check"
               v-model="form.dayopen"
             />
-            <label class="btn btn-outline-success" for="vendredi">Vendredi</label>
+            <label class="btn btn-outline-success" for="vendredi"
+              >Vendredi</label
+            >
           </div>
           <div class="col">
             <input
               type="checkbox"
               id="samedi"
-              value="samedi" class="btn-check"
+              value="samedi"
+              class="btn-check"
               v-model="form.dayopen"
             />
             <label class="btn btn-outline-success" for="samedi">Samedi</label>
@@ -143,37 +153,40 @@
             <input
               type="checkbox"
               id="dimanche"
-              value="dimanche" class="btn-check"
+              value="dimanche"
+              class="btn-check"
               v-model="form.dayopen"
             />
-            <label class="btn btn-outline-success" for="dimanche">Dimanche</label>
+            <label class="btn btn-outline-success" for="dimanche"
+              >Dimanche</label
+            >
           </div>
         </div>
       </div>
-        <label class="form-label" for="houropen">Heures d'ouverture</label>
+      <label class="form-label" for="houropen">Heures d'ouverture</label>
       <div class="form-group row">
-          <div class="form-group col">
-            <!--<label class="form-label" for="ouverture">Ouverture</label>-->
-            <input
-              class="form-control"
-              type="text"
-              id="ouverture"
-              value="ouverture"
-              placeholder="Vos heures d'ouverture"
-              v-model="houropen"
-            />
-          </div>
-          <div class="form-group col">
-            <!--<label class="form-label" for="fermeture">Fermeture</label>-->
-            <input
-              class="form-control"
-              type="text"
-              id="fermeture"
-              value="fermeture"
-              placeholder="Vos heures de fermeture"
-              v-model="houropen"
-            />
-          </div>
+        <div class="form-group col">
+          <!--<label class="form-label" for="ouverture">Ouverture</label>-->
+          <input
+            class="form-control"
+            type="text"
+            id="ouverture"
+            value="ouverture"
+            placeholder="Vos heures d'ouverture"
+            v-model="houropen"
+          />
+        </div>
+        <div class="form-group col">
+          <!--<label class="form-label" for="fermeture">Fermeture</label>-->
+          <input
+            class="form-control"
+            type="text"
+            id="fermeture"
+            value="fermeture"
+            placeholder="Vos heures de fermeture"
+            v-model="houropen"
+          />
+        </div>
       </div>
       <div class="form-group">
         <button class="btn btn-primary" @click="notif()">Envoyer</button>
