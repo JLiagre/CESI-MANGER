@@ -12,7 +12,10 @@
         </v-btn>
       </div>
       <v-spacer></v-spacer>
-      <v-app-bar-title v-if="$route.name == 'home'"
+      <v-app-bar-title
+        v-if="
+          $route.name == 'home' || this.$store.state.user.userRole !== 'client'
+        "
         >CESI MANGER
       </v-app-bar-title>
       <v-app-bar-title v-else>
@@ -25,7 +28,12 @@
         ></v-autocomplete>
       </v-app-bar-title>
       <v-spacer></v-spacer>
-      <v-btn v-if="this.$store.state.connected === true" to="/cart"
+      <v-btn
+        v-if="
+          this.$store.state.connected === true &&
+          this.$store.state.user.userRole === 'client'
+        "
+        to="/cart"
         >Panier
       </v-btn>
       <v-btn v-if="!this.$store.state.connected" to="/login">Connexion</v-btn>
@@ -34,6 +42,14 @@
       </v-btn>
       <v-btn v-if="this.$store.state.connected === true" to="/profil"
         >Profil
+      </v-btn>
+      <v-btn
+        v-if="
+          this.$store.state.connected === true &&
+          this.$store.state.user.userRole === 'restaurateur'
+        "
+        to="/restaurants"
+        >Mes Restaurants
       </v-btn>
       <v-btn v-if="this.$store.state.connected === true" @click="Logout"
         >Deconnexion
