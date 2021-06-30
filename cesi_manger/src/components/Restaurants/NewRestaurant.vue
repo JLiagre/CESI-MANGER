@@ -63,16 +63,15 @@
         />
       </div>
 
-
       <div class="form-group">
         <label class="form-label">Jours d'ouverture</label>
         <div class="row">
           <div class="col">
-            <input type="checkbox" id="lundi"  name="lundi" class="btn-check" />
+            <input type="checkbox" id="lundi" name="lundi" class="btn-check" />
             <label class="btn btn-outline-success" for="lundi">Lundi</label>
           </div>
           <div class="col">
-            <input type="checkbox" id="mardi"   name="mardi" class="btn-check" />
+            <input type="checkbox" id="mardi" name="mardi" class="btn-check" />
             <label class="btn btn-outline-success" for="mardi">Mardi</label>
           </div>
           <div class="col">
@@ -87,7 +86,13 @@
             >
           </div>
           <div class="col">
-            <input type="checkbox" id="jeudi" value="jeudi" name="jeudi" class="btn-check" />
+            <input
+              type="checkbox"
+              id="jeudi"
+              value="jeudi"
+              name="jeudi"
+              class="btn-check"
+            />
             <label class="btn btn-outline-success" for="jeudi">Jeudi</label>
           </div>
           <div class="col">
@@ -123,7 +128,6 @@
           </div>
         </div>
       </div>
-
 
       <label class="form-label" for="houropen">Heures d'ouverture</label>
       <div class="form-group row">
