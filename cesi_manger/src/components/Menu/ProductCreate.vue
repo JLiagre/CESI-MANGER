@@ -1,6 +1,6 @@
 <template>
-  <div class="acc-form" v-if="(userClient = true)">
-    <h2 class="change-acc-name">Créer mon menu</h2>
+  <div class="acc-form">
+    <h2 class="change-acc-name">Créer mon produit</h2>
     <form v-on:submit.prevent="submitForm">
       <div class="form-group">
         <label class="form-label" for="name">Nom du produit</label>

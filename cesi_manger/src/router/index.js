@@ -50,6 +50,36 @@ const routes = [
     name: 'payment',
     component: () => import('../components/Shop/Payment.vue'),
   },
+  {
+    path: '/bardon',
+    name: 'bardon',
+    component: () => import('../components/Shop/Restaurants/Bardon.vue')
+  },
+  {
+    path: '/caci',
+    name: 'caci',
+    component: () => import('../components/Shop/Restaurants/Caci.vue')
+  },
+  {
+    path: '/ces',
+    name: 'ces',
+    component: () => import('../components/Shop/Restaurants/CES.vue')
+  },
+  {
+    path: '/salade',
+    name: 'salade',
+    component: () => import('../components/Shop/Restaurants/Salade.vue')
+  },
+  {
+    path: '/jojo',
+    name: 'jojo',
+    component: () => import('../components/Shop/Restaurants/Jojo.vue')
+  },
+  {
+    path: '/sésé',
+    name: 'sésé',
+    component: () => import('../components/Shop/Restaurants/Sésé.vue')
+  },
   //
   // Gestion Profil
   //
