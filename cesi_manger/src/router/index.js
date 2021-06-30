@@ -36,31 +36,23 @@ const routes = [
   // Commandes
   //
   {
-    path: '/products',
-    name: 'products',
-    component: () => import('../components/Shop/Products.vue'),
-  },
-  {
-    path: '/product/:id',
-    name: 'product',
-    component: () => import('../components/Shop/Product.vue'),
-  },
-  {
-    path: '/menu/:id',
-    name: 'menu',
-    component: () => import('../components/Shop/Menu.vue'),
+    path: '/shop',
+    name: 'shop',
+    component: () => import('../components/Shop/Shop.vue'),
   },
   {
     path: '/cart',
     name: 'cart',
     component: () => import('../components/Shop/ShoppingCart.vue'),
   },
-
   {
     path: '/payment',
     name: 'payment',
     component: () => import('../components/Shop/Payment.vue'),
   },
+  //
+  // Gestion Profil
+  //
   {
     path: '/profil',
     name: 'Profil',
@@ -70,6 +62,30 @@ const routes = [
     path: '/statscommandes',
     name: 'Statistiques',
     component: () => import('../components/Stats/Commandes.vue'),
+  },
+
+  //
+  // RESTAURANTS
+  //
+  {
+    path: '/Restaurants',
+    name: 'restaurants',
+    component: () => import('../components/Restaurants/ListRestaurant.vue'),
+  },
+  {
+    path: '/Restaurants/edit',
+    name: 'Edit Restaurant',
+    component: () => import('../components/Restaurants/EditRestaurant.vue'),
+  },
+  {
+    path: '/Restaurants/view',
+    name: 'restaurants',
+    component: () => import('../components/Restaurants/ListRestaurant.vue'),
+  },
+  {
+    path: '/Restaurants/new',
+    name: 'New Restaurant',
+    component: () => import('../components/Restaurants/NewRestaurant.vue'),
   },
 ]
 

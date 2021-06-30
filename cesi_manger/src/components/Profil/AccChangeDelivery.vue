@@ -1,5 +1,5 @@
 <template>
-  <div class="acc-form" v-if="(userClient = true)">
+  <div class="acc-form">
     <h2 class="change-acc-name">Modifier mon compte</h2>
     <form v-on:submit.prevent="submitForm">
       <div class="form-group">
@@ -52,7 +52,7 @@
           v-model="form.country"
         />
       </div>
-        <label class="form-label" for="formControlRange">Status</label><br />
+      <label class="form-label" for="formControlRange">Status</label><br />
       <div class="form-group row">
         <div class="col">
           <input
@@ -63,7 +63,11 @@
             value="standby"
             v-model="form.status"
           />
-          <label class="form-check-label btn btn-outline-secondary" for="standby"><i class="fas fa-hourglass-half"></i> En attente</label>
+          <label
+            class="form-check-label btn btn-outline-secondary"
+            for="standby"
+            ><i class="fas fa-hourglass-half"></i> En attente</label
+          >
         </div>
         <div class="col">
           <input
@@ -74,7 +78,11 @@
             value="ondelivery"
             v-model="form.status"
           />
-          <label class="form-check-label btn btn-outline-secondary" for="ondelivery"><i class="fas fa-motorcycle"></i> En livraison</label>
+          <label
+            class="form-check-label btn btn-outline-secondary"
+            for="ondelivery"
+            ><i class="fas fa-motorcycle"></i> En livraison</label
+          >
         </div>
       </div>
       <div class="form-group">

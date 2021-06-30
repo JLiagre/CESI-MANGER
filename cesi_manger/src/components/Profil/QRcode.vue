@@ -12,9 +12,10 @@
         <input
           type="text"
           size="25"
-          placeholder="Type to generate..."
+          placeholder="Entrer le code votre parrain."
           v-model="text"
         />
+        <button class="btn btn-primary">Utiliser</button>
       </div>
     </div>
   </div>
@@ -26,7 +27,10 @@ import QrcodeVue from 'qrcode.vue'
 export default {
   data() {
     return {
-      value: 'JLI27062021',
+      value:
+        this.$store.state.user.userRole +
+        this.$store.state.user.ID +
+        this.$store.state.user.user_name,
       size: 200,
     }
   },
