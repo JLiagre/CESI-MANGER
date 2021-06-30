@@ -10,10 +10,12 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '@/assets/css/main.css'
 import VueCookie from 'vue-cookie'
+import VueSplash from 'vue-splash'
 
 Vue.config.productionTip = false
 Vue.use(Notifications)
 Vue.use(VueCookie)
+Vue.use(VueSplash)
 
 new Vue({
   el: '#app',
