@@ -3,11 +3,10 @@
     <div v-if="loaded">
       <h3>Détails du menu</h3>
       <div class="card">
-        <div class="card-header">header</div>
+        <div class="card-header">C'est Caci parfait</div>
         <div class="card-body">
           <p>ID: 1</p>
-          <p>Nom: Test</p>
-          <p>Prix (€): 10</p>
+          <p>Nom: Pasta Formula</p>
           <table class="table">
             <thead class="thead-dark">
               <tr>
@@ -18,31 +17,32 @@
             </thead>
             <tbody>
               <tr>
-                <td>Pate</td>
+                <td>Pâte</td>
                 <td>1</td>
-                <td><del>10€</del> 8€</td>
+                <td><del>10€</del>  8€</td>
               </tr>
               <tr>
                 <td>Boisson</td>
-                <td>2</td>
-                <td><del>5€</del> 4€</td>
+                <td>1</td>
+                <td><del>5€</del>  4€</td>
               </tr>
               <tr>
                 <td>Dessert</td>
-                <td>2</td>
-                <td><del>5€</del> 4€</td>
+                <td>1</td>
+                <td><del>5€</del>  4€</td>
               </tr>
               <tr>
                 <td>TOTAL</td>
                 <td>---</td>
-                <td>24€</td>
+                <td>16€</td>
               </tr>
             </tbody>
           </table>
           <!-- ******************************************* -->
           <!-- Ici j'ai préparé le code pour lier à la BDD -->
           <!-- ******************************************* -->
-          <!-- 
+          <!--  <div class="card-header">{{restaurantName}}</div>
+                ...
                     <p>ID: {{ productId }}</p>
                     <p>Product Name: {{ productName }}</p>
                     <p>Product Price: ${{ productPrice }}</p>
@@ -52,7 +52,7 @@
           <button class="btn btn-success">
             <i class="fa fa-shopping-cart"></i> Ajouter au panier
           </button>
-          <router-link :to="'/products'" class="btn btn-primary">
+          <router-link :to="'/shop'" class="btn btn-primary">
             Retour
           </router-link>
         </div>
@@ -61,14 +61,16 @@
     <div v-else>
       <h3>Loading...</h3>
     </div>
+    
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Product',
+  name: 'Formula',
   data() {
     return {
+      restaurantName: '',
       productId: '',
       productName: '',
       productPrice: '',

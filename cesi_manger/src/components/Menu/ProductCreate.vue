@@ -1,80 +1,60 @@
 <template>
-  <div class="acc-form">
-    <h2 class="change-acc-name">Modifier mon compte</h2>
+  <div class="acc-form" v-if="(userClient = true)">
+    <h2 class="change-acc-name">Créer mon menu</h2>
     <form v-on:submit.prevent="submitForm">
       <div class="form-group">
-        <label class="form-label" for="username">Pseudo</label>
-        <input
-          type="text"
-          class="form-control"
-          id="username"
-          placeholder="Votre pseudo"
-          v-model="form.username"
-        />
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="password">Mot de passe</label>
-        <input
-          type="text"
-          class="form-control"
-          id="password"
-          placeholder="Votre mot de passe"
-          v-model="form.password"
-        />
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="name">Prénom</label>
+        <label class="form-label" for="name">Nom du produit</label>
         <input
           type="text"
           class="form-control"
           id="name"
-          placeholder="Votre prénom"
+          placeholder="Le nom du produit"
           v-model="form.name"
         />
       </div>
       <div class="form-group">
         <label class="form-label" for="description">Description</label>
         <input
-          type="email"
+          type="text"
           class="form-control"
           id="description"
-          placeholder="Description du restaurant"
+          placeholder="Description du produit"
           v-model="form.description"
         />
       </div>
       <div class="form-group">
-        <label class="form-label" for="country">Pays</label>
+        <label class="form-label" for="prix">Prix du produit</label>
         <input
-          type="text"
+          type="email"
           class="form-control"
-          id="country"
-          placeholder="Votre pays"
-          v-model="form.country"
+          id="prix"
+          placeholder="00€"
+          v-model="form.prix"
         />
       </div>
+      <div class="form-group">
         <label class="form-label" for="formControlRange">Status</label><br />
-      <div class="form-group row">
-        <div class="col">
+        <div class="form-check form-check-inline">
           <input
-            class="form-check-input btn-check"
+            class="form-check-input"
             type="radio"
-            id="standby"
             name="status"
-            value="standby"
-            v-model="form.status"
+            id="status-new"
+            value="new"
+            v-model="form.staus"
           />
-          <label class="form-check-label btn btn-outline-secondary" for="standby"><i class="fas fa-hourglass-half"></i> En attente</label>
+          <label class="form-check-label" for="status">Nouveau</label>
         </div>
-        <div class="col">
+        <div class="form-check form-check-inline">
           <input
-            class="form-check-input btn-check"
+            class="form-check-input"
             type="radio"
-            id="ondelivery"
             name="status"
-            value="ondelivery"
+            id="status-orderable"
+            value="orderable"
             v-model="form.status"
           />
-          <label class="form-check-label btn btn-outline-secondary" for="ondelivery"><i class="fas fa-motorcycle"></i> En livraison</label>
+          <label class="form-check-label" for="status">Commandable</label>
         </div>
       </div>
       <div class="form-group">
@@ -87,15 +67,13 @@
 <script>
 //import axios from 'axios'
 export default {
-  name: 'AccChangeRestaurant',
+  name: 'MenuCreateForm',
   data() {
     return {
       form: {
-        username: '',
-        password: '',
         name: '',
         description: '',
-        country: '',
+        prix: '',
         status: '',
       },
     }
@@ -104,8 +82,7 @@ export default {
     notif() {
       this.$notify({
         group: 'foo',
-        title: 'Validation',
-        text: "Votre demande a bien été prise en compte, nos équipes s'en charge le plus rapidement possible.",
+        title: 'Menu créé',
       })
     },
     /*submitForm(){

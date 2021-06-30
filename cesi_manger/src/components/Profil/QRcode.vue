@@ -12,9 +12,10 @@
         <input
           type="text"
           size="25"
-          placeholder="Type to generate..."
+          placeholder="Entrer le code votre parrain."
           v-model="text"
         />
+        <button class="btn btn-primary">Utiliser</button>
       </div>
     </div>
   </div>

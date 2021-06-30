@@ -1,9 +1,9 @@
 <template>
-  <div class="acc-form" v-if="(userClient = true)">
+  <div class="acc-form">
     <h2 class="change-acc-name">Modifier mon compte</h2>
     <form v-on:submit.prevent="submitForm">
       <h5>Compte</h5>
-      <div class="form-group row ml-1 mr-1 pb-8">
+      <div class="form-group row  ml-1 mr-1 pb-8">
         <!--<label class="form-label" for="username">Pseudo</label>-->
         <input
           type="text"
@@ -22,7 +22,7 @@
         />
       </div>
       <h5>Nom</h5>
-      <div class="form-group row ml-1 mr-1 pb-8">
+      <div class="form-group row  ml-1 mr-1 pb-8">
         <!--<label class="form-label" for="name">Prénom</label>-->
         <input
           type="text"
@@ -41,7 +41,7 @@
         />
       </div>
       <h5>Coordonees</h5>
-      <div class="form-group row ml-1 mr-1 pb-8">
+      <div class="form-group  row  ml-1 mr-1 pb-8">
         <!--<label class="form-label" for="telephone">Téléphone</label>-->
         <input
           type="email"
@@ -60,7 +60,7 @@
         />
       </div>
       <h5>Addresse</h5>
-      <div class="form-group row ml-1 mr-1 pb-8">
+      <div class="form-group  row  ml-1 mr-1 pb-8">
         <!--<label class="form-label" for="address">Adresse</label>-->
         <input
           type="text"
@@ -70,7 +70,7 @@
           v-model="form.address"
         />
       </div>
-      <div class="form-group row ml-1 mr-1 pb-8">
+      <div class="form-group row  ml-1 mr-1 pb-8">
         <!--<label class="form-label" for="zip">Code postal</label>-->
         <input
           type="text"
@@ -88,7 +88,7 @@
           v-model="form.city"
         />
       </div>
-      <div class="form-group row ml-1 mr-1 pb-8">
+      <div class="form-group row  ml-1 mr-1 pb-8">
         <!--<label class="form-label" for="country">Pays</label>-->
         <input
           type="text"
