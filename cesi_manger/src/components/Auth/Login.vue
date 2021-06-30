@@ -11,18 +11,18 @@
       <div class="form-group">
         <label>Username</label>
         <input
-            type="string"
-            name="username"
-            class="form-control form-control-lg"
+          type="string"
+          name="username"
+          class="form-control form-control-lg"
         />
       </div>
 
       <div class="form-group">
         <label>Password</label>
         <input
-            type="password"
-            name="password"
-            class="form-control form-control-lg"
+          type="password"
+          name="password"
+          class="form-control form-control-lg"
         />
       </div>
 
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import {mapActions} from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'Login',
@@ -46,15 +46,15 @@ export default {
   methods: {
     ...mapActions(['login']),
     async logUser(e) {
-      e.preventDefault();
-      console.log(e.target.elements.username.value);
-      console.log(e.target.elements.password.value);
+      e.preventDefault()
+      console.log(e.target.elements.username.value)
+      console.log(e.target.elements.password.value)
       let data = {
         username: e.target.elements.username.value,
         password: e.target.elements.password.value,
-      };
-     await this.login(data);
       }
+      await this.login(data)
     },
+  },
 }
 </script>

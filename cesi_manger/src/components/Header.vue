@@ -4,49 +4,58 @@
       <div class="d-flex justify-start">
         <v-btn class="back2home" to="/">
           <v-img
-              alt="CESI'EAT Logo"
-              class="shrink-mr-2"
-              contain
-              src="@/assets/images/cesi-manger-logo.png"
+            alt="CESI'EAT Logo"
+            class="shrink-mr-2"
+            contain
+            src="@/assets/images/cesi-manger-logo.png"
           ></v-img>
         </v-btn>
       </div>
       <v-spacer></v-spacer>
       <v-app-bar-title v-if="$route.name == 'home'"
-      >CESI MANGER
-      </v-app-bar-title
-      >
+        >CESI MANGER
+      </v-app-bar-title>
       <v-app-bar-title v-else>
         <v-autocomplete
-            v-model="value"
-            :items="items"
-            dense
-            filled
-            label="Que voulez-vous manger ?"
+          v-model="value"
+          :items="items"
+          dense
+          filled
+          label="Que voulez-vous manger ?"
         ></v-autocomplete>
       </v-app-bar-title>
       <v-spacer></v-spacer>
-      <v-btn v-if=" this.$store.state.connected === true" to="/cart"
-      >Panier
-      </v-btn
-      >
-      <v-btn v-if=" !this.$store.state.connected" to="/login"
-      >Connexion
-      </v-btn
-      >
+      <v-btn v-if="this.$store.state.connected === true" to="/cart"
+        >Panier
+      </v-btn>
+      <v-btn v-if="!this.$store.state.connected" to="/login">Connexion</v-btn>
       <v-btn v-if="!this.$store.state.connected" to="/signup"
-      >Créer un compte
-      </v-btn
-      >
-      <v-btn v-if="this.$store.state.connected" to="/profil">Profil</v-btn>
+        >Créer un compte
+      </v-btn>
+      <v-btn v-if="this.$store.state.connected === true" to="/profil"
+        >Profil
+      </v-btn>
+      <v-btn v-if="this.$store.state.connected === true" @click="Logout"
+        >Deconnexion
+      </v-btn>
     </v-app-bar>
   </v-card>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
+  methods: {
+    ...mapActions(['logout']),
+    Logout() {
+      this.logout()
+    },
+  },
+
   data: () => ({
-    items: ['foo', 'bar', 'fizz', 'buzz'], // Remplacer par les valeurs de la BDD
+    items: ['foo', 'bar', 'fizz', 'buzz'],
+    // Remplacer par les valeurs de la BDD
   }),
 }
 </script>

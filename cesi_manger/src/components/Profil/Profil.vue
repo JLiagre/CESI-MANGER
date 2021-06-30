@@ -1,10 +1,12 @@
 <template>
   <v-main>
-    <histo-commande v-if="userClient != false"></histo-commande>
-    <take-order v-if="userDelivery != false"></take-order>
-    <acc-change-user v-if="(userClient != false)"></acc-change-user>
-    <acc-change-restaurant v-if="(userRestaurant != false)"></acc-change-restaurant>
-    <acc-change-delivery v-if="(userDelivery != false)"></acc-change-delivery>
+    <histo-commande v-if="this.$store.state.user.userRole==='client'"></histo-commande>
+    <take-order v-if="this.$store.state.user.userRole==='livreur'"></take-order>
+    <acc-change-user v-if="this.$store.state.user.userRole==='client'"></acc-change-user>
+    <acc-change-restaurant
+      v-if="this.$store.state.user.userRole==='restaurateur'"
+    ></acc-change-restaurant>
+    <acc-change-delivery v-if="this.$store.state.user.userRole==='livreur'"></acc-change-delivery>
     <acc-supp></acc-supp>
     <qr-code></qr-code>
   </v-main>

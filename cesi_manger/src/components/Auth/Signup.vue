@@ -1,6 +1,6 @@
 <template>
   <div class="register-form-group">
-    <form v-on:submit="signup">
+    <form v-on:submit="userSignup">
       <h3>Sign Up</h3>
 
       <div class="form-group">
@@ -43,6 +43,15 @@
         />
       </div>
 
+      <div class="form-group">
+        <label> Vous êtes ? </label>
+        <select name="userRole" v-model="selected" style="width: 100%; margin-top: 4%; margin-bottom: 4%; padding-top: 4%; padding-bottom: 4%; justify-content: center;border: 2px solid cadetblue;
+          ">
+          <option name="client" value="client">Client</option>
+          <option name="livreur" value="livreur">Livreur</option>
+          <option name="restaurateur" value="restaurateur">Restaurateur</option>
+        </select>
+      </div>
       <div class="form-group">
         <label>Email address</label>
         <input
@@ -104,16 +113,13 @@
 </template>
 
 <script>
-import axios from 'axios'
-import router from '../../router'
-
+import { mapActions } from 'vuex'
 export default {
   name: 'signup',
   methods: {
-    signup: (e) => {
+    ...mapActions(['signup']),
+    async userSignup(e) {
       e.preventDefault()
-      console.log(e.target.elements)
-      let signup = () => {
         let data = {
           username: e.target.elements.username.value,
           password: e.target.elements.password.value,
@@ -125,20 +131,10 @@ export default {
           surname: e.target.elements.surname.value,
           name: e.target.elements.name.value,
           address: e.target.elements.address.value,
+          userRole: e.target.elements.userRole.value,
         }
-        axios
-          .post('api/auth/signup', data)
-          .then(() => {
-            console.log('User created ')
-            router.push({ name: 'login' })
-          })
-          .catch()
-        {
-          console.log('e')
-        }
+      await this.signup(data)
       }
-      signup()
     },
-  },
-}
+  }
 </script>
