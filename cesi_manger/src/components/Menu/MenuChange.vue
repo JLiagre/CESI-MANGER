@@ -33,10 +33,6 @@
         />
       </div>
       <div class="form-group">
-        <label class="form-label" for="address">Photo du produit</label>
-        <input type="file" accept="image/*" class="form-control" id="picture" />
-      </div>
-      <div class="form-group">
         <label class="form-label" for="formControlRange">Status</label><br />
         <div class="form-check form-check-inline">
           <input
