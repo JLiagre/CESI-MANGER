@@ -2,78 +2,94 @@
   <div class="acc-form">
     <h2 class="change-acc-name">Modifier mon compte</h2>
     <form v-on:submit.prevent="submitForm">
-      <div class="form-group">
-        <label class="form-label" for="username">Pseudo</label>
+      <h5>Compte</h5>
+      <div class="form-group row ml-1 mr-1 pb-8">
+        <!--<label class="form-label" for="username">Pseudo</label>-->
         <input
           type="text"
-          class="form-control"
+          class="form-control col mr-1"
           id="username"
           placeholder="Votre pseudo"
           v-model="form.username"
         />
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="password">Mot de passe</label>
+        <!--<label class="form-label" for="password">Mot de passe</label>-->
         <input
-          type="text"
-          class="form-control"
+          type="password"
+          class="form-control col ml-1"
           id="password"
           placeholder="Votre mot de passe"
           v-model="form.password"
         />
       </div>
-      <div class="form-group">
-        <label class="form-label" for="name">Prénom</label>
+      <h5>Nom</h5>
+      <div class="form-group row ml-1 mr-1 pb-8">
+        <!--<label class="form-label" for="name">Prénom</label>-->
         <input
           type="text"
-          class="form-control"
+          class="form-control col mr-1"
           id="name"
           placeholder="Votre prénom"
           v-model="form.name"
         />
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="description">Description</label>
+        <!--<label class="form-label" for="surname">Nom de famille</label>-->
         <input
-          type="email"
-          class="form-control"
-          id="description"
-          placeholder="Description du restaurant"
-          v-model="form.description"
+          type="text"
+          class="form-control col ml-1"
+          id="surname"
+          placeholder="Votre nom de famille"
+          v-model="form.surname"
         />
       </div>
-      <div class="form-group">
-        <label class="form-label" for="address">Adresse</label>
+      <h5>Coordonees</h5>
+      <div class="form-group row ml-1 mr-1 pb-8">
+        <!--<label class="form-label" for="telephone">Téléphone</label>-->
+        <input
+          type="email"
+          class="form-control col mr-1"
+          id="telephone"
+          placeholder="Telephone"
+          v-model="form.telephone"
+        />
+        <!--<label class="form-label" for="email">Email</label>-->
+        <input
+          type="email"
+          class="form-control col ml-1"
+          id="email"
+          placeholder="Email"
+          v-model="form.email"
+        />
+      </div>
+      <h5>Addresse</h5>
+      <div class="form-group row ml-1 mr-1 pb-8">
+        <!--<label class="form-label" for="address">Adresse</label>-->
         <input
           type="text"
           class="form-control"
           id="address"
-          placeholder="Votre adresse"
+          placeholder="Votre adresse postale"
           v-model="form.address"
         />
       </div>
-      <div class="form-group">
-        <label class="form-label" for="zip">Code postal</label>
+      <div class="form-group row ml-1 mr-1 pb-8">
+        <!--<label class="form-label" for="zip">Code postal</label>-->
         <input
           type="text"
-          class="form-control"
+          class="form-control col mr-1"
           id="zip"
-          placeholder="Votre adresse"
+          placeholder="Code Postal"
           v-model="form.zip"
         />
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="city">Ville</label>
+        <!--<label class="form-label" for="city">Ville</label>-->
         <input
           type="text"
-          class="form-control"
+          class="form-control col ml-1"
           id="city"
-          placeholder="Votre ville"
+          placeholder="Votre commune"
           v-model="form.city"
         />
       </div>
-      <div class="form-group">
-        <label class="form-label" for="country">Pays</label>
+      <div class="form-group row ml-1 mr-1 pb-8">
+        <!--<label class="form-label" for="country">Pays</label>-->
         <input
           type="text"
           class="form-control"
@@ -81,112 +97,6 @@
           placeholder="Votre pays"
           v-model="form.country"
         />
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="dayopen">Jours d'ouverture</label>
-        <div class="row">
-          <div class="col">
-            <input
-              type="checkbox"
-              id="lundi"
-              value="lundi"
-              class="btn-check"
-              v-model="form.dayopen"
-            />
-            <label class="btn btn-outline-success" for="lundi">Lundi</label>
-          </div>
-          <div class="col">
-            <input
-              type="checkbox"
-              id="mardi"
-              value="mardi"
-              class="btn-check"
-              v-model="form.dayopen"
-            />
-            <label class="btn btn-outline-success" for="mardi">Mardi</label>
-          </div>
-          <div class="col">
-            <input
-              type="checkbox"
-              id="mercredi"
-              value="mercredi"
-              class="btn-check"
-              v-model="form.dayopen"
-            />
-            <label class="btn btn-outline-success" for="mercredi"
-              >Mercredi</label
-            >
-          </div>
-          <div class="col">
-            <input
-              type="checkbox"
-              id="jeudi"
-              value="jeudi"
-              class="btn-check"
-              v-model="form.dayopen"
-            />
-            <label class="btn btn-outline-success" for="jeudi">Jeudi</label>
-          </div>
-          <div class="col">
-            <input
-              type="checkbox"
-              id="vendredi"
-              value="vendredi"
-              class="btn-check"
-              v-model="form.dayopen"
-            />
-            <label class="btn btn-outline-success" for="vendredi"
-              >Vendredi</label
-            >
-          </div>
-          <div class="col">
-            <input
-              type="checkbox"
-              id="samedi"
-              value="samedi"
-              class="btn-check"
-              v-model="form.dayopen"
-            />
-            <label class="btn btn-outline-success" for="samedi">Samedi</label>
-          </div>
-          <div class="col">
-            <input
-              type="checkbox"
-              id="dimanche"
-              value="dimanche"
-              class="btn-check"
-              v-model="form.dayopen"
-            />
-            <label class="btn btn-outline-success" for="dimanche"
-              >Dimanche</label
-            >
-          </div>
-        </div>
-      </div>
-      <label class="form-label" for="houropen">Heures d'ouverture</label>
-      <div class="form-group row">
-        <div class="form-group col">
-          <!--<label class="form-label" for="ouverture">Ouverture</label>-->
-          <input
-            class="form-control"
-            type="text"
-            id="ouverture"
-            value="ouverture"
-            placeholder="Vos heures d'ouverture"
-            v-model="houropen"
-          />
-        </div>
-        <div class="form-group col">
-          <!--<label class="form-label" for="fermeture">Fermeture</label>-->
-          <input
-            class="form-control"
-            type="text"
-            id="fermeture"
-            value="fermeture"
-            placeholder="Vos heures de fermeture"
-            v-model="houropen"
-          />
-        </div>
       </div>
       <div class="form-group">
         <button class="btn btn-primary" @click="notif()">Envoyer</button>

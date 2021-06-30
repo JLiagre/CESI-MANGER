@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col">
         <div class="delete-btn">
-          <button class="btn btn-primary" @click="notif()">Supprimer</button>
+          <button class="btn btn-danger" @click="notif()">Supprimer</button>
         </div>
       </div>
       <div class="col">

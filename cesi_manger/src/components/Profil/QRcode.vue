@@ -27,7 +27,10 @@ import QrcodeVue from 'qrcode.vue'
 export default {
   data() {
     return {
-      value: 'JLI27062021',
+      value:
+        this.$store.state.user.userRole +
+        this.$store.state.user.ID +
+        this.$store.state.user.user_name,
       size: 200,
     }
   },

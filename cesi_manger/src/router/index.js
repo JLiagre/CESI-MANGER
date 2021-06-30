@@ -63,6 +63,30 @@ const routes = [
     name: 'Statistiques',
     component: () => import('../components/Stats/Commandes.vue'),
   },
+
+  //
+  // RESTAURANTS
+  //
+  {
+    path: '/Restaurants',
+    name: 'restaurants',
+    component: () => import('../components/Restaurants/ListRestaurant.vue'),
+  },
+  {
+    path: '/Restaurants/edit',
+    name: 'Edit Restaurant',
+    component: () => import('../components/Restaurants/EditRestaurant.vue'),
+  },
+  {
+    path: '/Restaurants/view',
+    name: 'restaurants',
+    component: () => import('../components/Restaurants/ListRestaurant.vue'),
+  },
+  {
+    path: '/Restaurants/new',
+    name: 'New Restaurant',
+    component: () => import('../components/Restaurants/NewRestaurant.vue'),
+  },
 ]
 
 const router = new VueRouter({
