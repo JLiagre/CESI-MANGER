@@ -24,18 +24,23 @@
     <div class="carrousel">
       <carousel3d-home></carousel3d-home>
     </div>
+    <div>
+      <order-status></order-status>
+    </div>
   </v-main>
 </template>
 
 <script>
 import Carousel3dHome from '../components/Carousel/Carousel3dHome.vue'
 import YourLogo from '../assets/images/final.gif'
+import orderStatus from '../components/Commande/orderStatus.vue'
 
 export default {
   name: 'Home',
   //
   components: {
     'carousel3d-home': Carousel3dHome,
+    'order-status': orderStatus,
   },
   //
   data: () => ({
