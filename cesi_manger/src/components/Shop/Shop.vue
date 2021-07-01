@@ -48,24 +48,16 @@ import ProductCreate from '../Menu/ProductCreate.vue'
 import ProductChange from '../Menu/ProductChange.vue'
 
 export default {
-    name: 'Shop',
-    data() {
-        return {
-            connectedRestaurant: false,
-
-        }
-    },
-    components:{
-        'menu-change': MenuChange,
-        'menu-create': MenuCreate,
-        'product-change': ProductChange,
-        'product-create': ProductCreate,
+  name: 'Shop',
+  data() {
+    return {
+      connectedRestaurant: false,
     }
+  },
+  components: {
+    'menu-change': MenuChange,
+    'menu-create': MenuCreate,
+    product: Product,
+  },
 }
 </script>
-
-<style>
-    .access-menu {
-        padding: 5em;
-    }
-</style>

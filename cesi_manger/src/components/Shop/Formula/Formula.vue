@@ -19,17 +19,17 @@
               <tr>
                 <td>Pâte</td>
                 <td>1</td>
-                <td><del>10€</del>  8€</td>
+                <td><del>10€</del> 8€</td>
               </tr>
               <tr>
                 <td>Boisson</td>
                 <td>1</td>
-                <td><del>5€</del>  4€</td>
+                <td><del>5€</del> 4€</td>
               </tr>
               <tr>
                 <td>Dessert</td>
                 <td>1</td>
-                <td><del>5€</del>  4€</td>
+                <td><del>5€</del> 4€</td>
               </tr>
               <tr>
                 <td>TOTAL</td>
@@ -61,7 +61,6 @@
     <div v-else>
       <h3>Loading...</h3>
     </div>
-    
   </div>
 </template>
 

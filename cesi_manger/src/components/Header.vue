@@ -12,9 +12,12 @@
         </v-btn>
       </div>
       <v-spacer></v-spacer>
-      <v-app-bar-title v-if="$route.name == 'home'"
-        >CESI MANGER</v-app-bar-title
-      >
+      <v-app-bar-title
+        v-if="
+          $route.name == 'home' || this.$store.state.user.userRole !== 'client'
+        "
+        >CESI MANGER
+      </v-app-bar-title>
       <v-app-bar-title v-else>
         <v-autocomplete
           v-model="value"
@@ -25,24 +28,50 @@
         ></v-autocomplete>
       </v-app-bar-title>
       <v-spacer></v-spacer>
-      <v-btn v-if="$route.name != 'home' && connectedUser != false" to="/cart"
-        >Panier</v-btn
-      >
-      <v-btn v-if="$route.name == 'home' && connectedUser != true" to="/login"
-        >Connexion</v-btn
-      >
-      <v-btn v-if="$route.name == 'home' && connectedUser != true" to="/signup"
-        >Créer un compte</v-btn
-      >
-      <v-btn v-if="connectedUser != false" to="/profil">Profil</v-btn>
+      <v-btn
+        v-if="
+          this.$store.state.connected === true &&
+          this.$store.state.user.userRole === 'client'
+        "
+        to="/cart"
+        >Panier
+      </v-btn>
+      <v-btn v-if="!this.$store.state.connected" to="/login">Connexion</v-btn>
+      <v-btn v-if="!this.$store.state.connected" to="/signup"
+        >Créer un compte
+      </v-btn>
+      <v-btn v-if="this.$store.state.connected === true" to="/profil"
+        >Profil
+      </v-btn>
+      <v-btn
+        v-if="
+          this.$store.state.connected === true &&
+          this.$store.state.user.userRole === 'restaurateur'
+        "
+        to="/restaurants"
+        >Mes Restaurants
+      </v-btn>
+      <v-btn v-if="this.$store.state.connected === true" @click="Logout"
+        >Deconnexion
+      </v-btn>
     </v-app-bar>
   </v-card>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
+  methods: {
+    ...mapActions(['logout']),
+    Logout() {
+      this.logout()
+    },
+  },
+
   data: () => ({
-    items: ['foo', 'bar', 'fizz', 'buzz'], // Remplacer par les valeurs de la BDD
+    items: ['foo', 'bar', 'fizz', 'buzz'],
+    // Remplacer par les valeurs de la BDD
   }),
 }
 </script>

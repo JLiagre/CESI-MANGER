@@ -21,13 +21,11 @@
           <button class="btn btn-success">
             <i class="fa fa-shopping-cart"></i> Ajouter au panier
           </button>
-          <router-link :to="'/'" class="btn btn-primary">
-            Retour
-          </router-link>
+          <router-link :to="'/'" class="btn btn-primary"> Retour </router-link>
         </div>
       </div>
       <div>
-          <formula></formula>
+        <formula></formula>
       </div>
     </div>
     <div v-else>
@@ -51,7 +49,7 @@ export default {
     }
   },
   components: {
-    'formula': Formula,
+    formula: Formula,
   },
 }
 </script>
