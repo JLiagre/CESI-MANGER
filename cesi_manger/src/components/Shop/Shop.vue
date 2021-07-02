@@ -62,3 +62,24 @@ export default {
   },
 }
 </script>
+
+<style>
+.acc-form {
+  text-align: center;
+  font-size: 13px;
+  padding-top: 10em;
+  color: #000000;
+  margin: 0;
+}
+.form-group {
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-bottom: 1em;
+}
+.form-label {
+  font-weight: bold;
+}
+.change-acc-name {
+  font-weight: bold;
+}
+</style>

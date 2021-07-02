@@ -17,6 +17,7 @@ const store = new Vuex.Store({
     user: [],
     connected: false,
     restaurantList: [],
+    MenuList: [],
     selectedRestaurant: [],
   },
   getters: {
@@ -40,6 +41,14 @@ const store = new Vuex.Store({
     restaurantListChange(state, list) {
       state.restaurantList = list
       console.log(state.restaurantList)
+    },
+    restaurantListChangeUser(state, list) {
+      state.restaurantListUser = list
+      console.log(state.restaurantListUser)
+    },
+    MenuListChange(state, list) {
+      state.MenuList = list
+      console.log(state.MenuList)
     },
     selectedRestaurant(state, list) {
       state.selectedRestaurant = list
@@ -90,6 +99,24 @@ const store = new Vuex.Store({
           console.log(error)
         })
     },
+    async getMenus(context, id) {
+      return await axios
+        .get('/api/restaurant/menus', {
+          params: {
+            id: id,
+          },
+        })
+        .then((response) => {
+          console.log('Menu list for this user ')
+          console.log(response.data)
+          context.commit('MenuListChange', response.data)
+          router.push({ name: 'shop/menu' })
+        })
+        .catch(function (error) {
+          console.log('nope')
+          console.log(error)
+        })
+    },
     async getRestaurants(context) {
       return await axios
         .get('/api/restaurant', {
@@ -102,6 +129,21 @@ const store = new Vuex.Store({
           console.log(response.data)
           context.commit('restaurantListChange', response.data)
           router.push({ name: 'restaurants' })
+        })
+        .catch(function (error) {
+          console.log('nope')
+          console.log(error)
+        })
+    },
+    async getRestaurantsClient(context) {
+      return await axios
+        .get('/api/restaurant/all', {
+        })
+        .then((response) => {
+          console.log('Restaurant list')
+          console.log(response.data)
+          context.commit('restaurantListChangeUser', response.data)
+          router.push({ name: 'shop' })
         })
         .catch(function (error) {
           console.log('nope')

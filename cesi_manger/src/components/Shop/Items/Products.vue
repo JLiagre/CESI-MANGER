@@ -1,6 +1,7 @@
 <template>
   <div class="products">
     <h3>Produits</h3>
+    <h1>{{MenuList}}</h1>
     <div class="card mt-5">
       <div class="card-header">Liste des produits</div>
       <div class="card-body">
@@ -103,6 +104,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'Products',
 
@@ -121,6 +123,9 @@ export default {
     onDelete(index) {
       this.products.splice(index, 1)
     },
+  computed: {
+    ...mapState(['MenuList']),
+  },
   },
 
   /* *********************************************** */
