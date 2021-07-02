@@ -1,149 +1,156 @@
 <template>
   <div class="acc-form">
     <h2 class="change-acc-name">Modifier mon compte</h2>
-    <form v-on:submit.prevent="submitForm">
-      <h5>Compte</h5>
-      <div class="form-group row ml-1 mr-1 pb-8">
-        <!--<label class="form-label" for="username">Pseudo</label>-->
-        <input
-          type="text"
-          class="form-control col mr-1"
-          id="username"
-          placeholder="Votre pseudo"
-          v-model="form.username"
-        />
-        <!--<label class="form-label" for="password">Mot de passe</label>-->
-        <input
-          type="password"
-          class="form-control col ml-1"
-          id="password"
-          placeholder="Votre mot de passe"
-          v-model="form.password"
-        />
+    <form v-on:submit="EditUser">
+      <div>
+        <h5>Compte</h5>
+        <div class="form-group row ml-1 mr-1 pb-8">
+          <!--<label class="form-label" for="username">Pseudo</label>-->
+          <input
+            type="text"
+            class="form-control col mr-1"
+            id="username"
+            name="username"
+            placeholder="Votre pseudo"
+            :value="user.user_name"
+          />
+          <!--<label class="form-label" for="password">Mot de passe</label>-->
+          <input
+            type="password"
+            class="form-control col ml-1"
+            id="password"
+            autocomplete="off"
+            name="password"
+            placeholder="Votre mot de passe"
+          />
+        </div>
+        <h5>Nom</h5>
+        <div class="form-group row ml-1 mr-1 pb-8">
+          <!--<label class="form-label" for="name">Prénom</label>-->
+          <input
+            type="text"
+            class="form-control col mr-1"
+            id="name"
+            name="name"
+            placeholder="Votre prénom"
+            :value="user.name"
+          />
+          <!--<label class="form-label" for="surname">Nom de famille</label>-->
+          <input
+            type="text"
+            class="form-control col ml-1"
+            id="surname"
+            name="surname"
+            placeholder="Votre nom de famille"
+            :value="user.surname"
+          />
+        </div>
+        <h5>Coordonees</h5>
+        <div class="form-group row ml-1 mr-1 pb-8">
+          <!--<label class="form-label" for="telephone">Téléphone</label>-->
+          <input
+            type="number"
+            class="form-control col mr-1"
+            id="telephone"
+            name="telephone"
+            placeholder="Telephone"
+            :value="user.telephone"
+          />
+          <!--<label class="form-label" for="email">Email</label>-->
+          <input
+            type="email"
+            class="form-control col ml-1"
+            id="email"
+            name="email"
+            placeholder="Email"
+            :value="user.email"
+          />
+        </div>
+        <h5>Addresse</h5>
+        <div class="form-group row ml-1 mr-1 pb-8">
+          <!--<label class="form-label" for="address">Adresse</label>-->
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            name="address"
+            placeholder="Votre adresse postale"
+            :value="user.address"
+          />
+        </div>
+        <div class="form-group row ml-1 mr-1 pb-8">
+          <!--<label class="form-label" for="zip">Code postal</label>-->
+          <input
+            type="text"
+            class="form-control col mr-1"
+            name="zip"
+            id="zip"
+            :value="user.zip"
+          />
+          <!--<label class="form-label" for="city">Ville</label>-->
+          <input
+            type="text"
+            class="form-control col ml-1"
+            id="city"
+            name="city"
+            placeholder="Votre commune"
+            :value="user.city"
+          />
+        </div>
+        <div class="form-group row ml-1 mr-1 pb-8">
+          <!--<label class="form-label" for="country">Pays</label>-->
+          <input
+            type="text"
+            class="form-control"
+            id="country"
+            name="country"
+            placeholder="Votre pays"
+            :value="user.country"
+          />
+        </div>
       </div>
-      <h5>Nom</h5>
-      <div class="form-group row ml-1 mr-1 pb-8">
-        <!--<label class="form-label" for="name">Prénom</label>-->
-        <input
-          type="text"
-          class="form-control col mr-1"
-          id="name"
-          placeholder="Votre prénom"
-          v-model="form.name"
-        />
-        <!--<label class="form-label" for="surname">Nom de famille</label>-->
-        <input
-          type="text"
-          class="form-control col ml-1"
-          id="surname"
-          placeholder="Votre nom de famille"
-          v-model="form.surname"
-        />
-      </div>
-      <h5>Coordonees</h5>
-      <div class="form-group row ml-1 mr-1 pb-8">
-        <!--<label class="form-label" for="telephone">Téléphone</label>-->
-        <input
-          type="email"
-          class="form-control col mr-1"
-          id="telephone"
-          placeholder="Telephone"
-          v-model="form.telephone"
-        />
-        <!--<label class="form-label" for="email">Email</label>-->
-        <input
-          type="email"
-          class="form-control col ml-1"
-          id="email"
-          placeholder="Email"
-          v-model="form.email"
-        />
-      </div>
-      <h5>Addresse</h5>
-      <div class="form-group row ml-1 mr-1 pb-8">
-        <!--<label class="form-label" for="address">Adresse</label>-->
-        <input
-          type="text"
-          class="form-control"
-          id="address"
-          placeholder="Votre adresse postale"
-          v-model="form.address"
-        />
-      </div>
-      <div class="form-group row ml-1 mr-1 pb-8">
-        <!--<label class="form-label" for="zip">Code postal</label>-->
-        <input
-          type="text"
-          class="form-control col mr-1"
-          id="zip"
-          placeholder="Code Postal"
-          v-model="form.zip"
-        />
-        <!--<label class="form-label" for="city">Ville</label>-->
-        <input
-          type="text"
-          class="form-control col ml-1"
-          id="city"
-          placeholder="Votre commune"
-          v-model="form.city"
-        />
-      </div>
-      <div class="form-group row ml-1 mr-1 pb-8">
-        <!--<label class="form-label" for="country">Pays</label>-->
-        <input
-          type="text"
-          class="form-control"
-          id="country"
-          placeholder="Votre pays"
-          v-model="form.country"
-        />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" @click="notif()">Envoyer</button>
-      </div>
+      <button type="submit" class="btn btn-primary" @click="notif()">
+        Envoyer
+      </button>
     </form>
   </div>
 </template>
 
 <script>
 //import axios from 'axios'
+import { mapActions, mapState } from 'vuex'
+
 export default {
   name: 'AccChangeUser',
-  data() {
-    return {
-      form: {
-        username: '',
-        password: '',
-        name: '',
-        surname: '',
-        telephone: '',
-        email: '',
-        address: '',
-        zip: '',
-        city: '',
-        country: '',
-      },
-    }
+  computed: {
+    ...mapState(['user']),
   },
   methods: {
+    ...mapActions(['editUser']),
+    async EditUser(e) {
+      console.log(e)
+      e.preventDefault()
+      let data = {
+        user_name: e.target.elements.username.value,
+        password: e.target.elements.password.value,
+        email: e.target.elements.email.value,
+        city: e.target.elements.city.value,
+        zip: e.target.elements.zip.value,
+        telephone: e.target.elements.telephone.value,
+        country: e.target.elements.country.value,
+        surname: e.target.elements.surname.value,
+        name: e.target.elements.name.value,
+        address: e.target.elements.address.value,
+      }
+      await this.editUser(data)
+    },
     notif() {
       this.$notify({
         group: 'foo',
         title: 'Validation',
-        text: "Votre demande a bien été prise en compte, nos équipes s'en charge le plus rapidement possible.",
+        text: "Votre demande a bien été prise en compte, nos équipes s'en chargent le plus rapidement possible.",
       })
     },
-    /*submitForm(){
-            axios.post('/contact', this.form)
-                 .then((res) => {
-                     //Perform Success Action
-                 })
-                 .catch((error) => {
-                     // error.response.status Check status code
-                 }).finally(() => {
-                     //Perform action in always
-                 });
-        }*/
   },
 }
 </script>
@@ -156,14 +163,17 @@ export default {
   color: #000000;
   margin: 0;
 }
+
 .form-group {
   padding-left: 3em;
   padding-right: 3em;
   padding-bottom: 1em;
 }
+
 .form-label {
   font-weight: bold;
 }
+
 .change-acc-name {
   font-weight: bold;
 }

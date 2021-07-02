@@ -87,6 +87,11 @@ const routes = [
     name: 'New Restaurant',
     component: () => import('../components/Restaurants/NewRestaurant.vue'),
   },
+  {
+    path: '/Restaurants/editMenu',
+    name: 'Edit Menu',
+    component: () => import('../components/Restaurants/EditMenu.vue'),
+  },
 ]
 
 const router = new VueRouter({

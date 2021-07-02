@@ -137,9 +137,8 @@
             class="form-control"
             type="text"
             id="ouverture"
-            value="ouverture"
             placeholder="Vos heures d'ouverture"
-            v-model="houropen"
+            name="heure_ouverture"
           />
         </div>
         <div class="form-group col">
@@ -148,9 +147,8 @@
             class="form-control"
             type="text"
             id="fermeture"
-            value="fermeture"
             placeholder="Vos heures de fermeture"
-            v-model="houropen"
+            name="heure_fermeture"
           />
         </div>
       </div>
@@ -192,6 +190,10 @@ export default {
           e.target.elements.vendredi.checked,
           e.target.elements.samedi.checked,
           e.target.elements.dimanche.checked,
+        ],
+        opening_hours: [
+          e.target.elements.heure_ouverture.value,
+          e.target.elements.heure_fermeture.value,
         ],
         userID: this.getID(),
       }
