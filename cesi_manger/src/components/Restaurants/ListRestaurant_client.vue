@@ -37,7 +37,12 @@ import { mapActions } from 'vuex'
 export default {
   name: 'ListRestaurant',
   methods: {
-    ...mapActions(['deleteRestaurant', 'selectRestaurant', 'menuGesture', 'getMenus']),
+    ...mapActions([
+      'deleteRestaurant',
+      'selectRestaurant',
+      'menuGesture',
+      'getMenus',
+    ]),
     randomStat() {
       return Math.floor(Math.random() * 150)
     },

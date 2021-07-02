@@ -1,6 +1,30 @@
 <template>
-  <div class="acc-form" v-if="(userClient = true)">
-    <h2 class="change-acc-name">Modifier mon menu</h2>
+  <div class="acc-form">
+    <h2 class="change-acc-name">
+      Modifier mon menu {{ selectedRestaurant.menu }}
+    </h2>
+    <select
+      name="userRole"
+      style="
+        width: 100%;
+        margin-top: 4%;
+        margin-bottom: 4%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+        justify-content: center;
+        border: 2px solid cadetblue;
+      "
+      v-model="selectP"
+      :key="test"
+    >
+      <option
+        v-for="(product, n) in selectedRestaurant.menu"
+        :value="selectedRestaurant.menu"
+        :key="n"
+      >
+        {{ product.name }}
+      </option>
+    </select>
     <form v-on:submit.prevent="submitForm">
       <div class="form-group">
         <label class="form-label" for="name"
@@ -12,7 +36,7 @@
           class="form-control"
           id="name"
           placeholder="Le nom du produit"
-          v-model="form.name"
+          :value="selectedROProduct.name"
         />
       </div>
       <div class="form-group">
@@ -22,65 +46,18 @@
           class="form-control"
           id="description"
           placeholder="Description du produit"
-          v-model="form.description"
+          :value="selectedROProduct.description"
         />
       </div>
       <div class="form-group">
         <label class="form-label" for="prix">Prix du produit</label>
         <input
-          type="email"
+          type="number"
           class="form-control"
           id="prix"
           placeholder="00€"
-          v-model="form.prix"
+          :value="selectedROProduct.price"
         />
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="formControlRange">Status</label><br />
-        <div class="form-check form-check-inline">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="status"
-            id="status-new"
-            value="new"
-            v-model="form.staus"
-          />
-          <label class="form-check-label" for="status">Nouveau</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="status"
-            id="status-orderable"
-            value="orderable"
-            v-model="form.status"
-          />
-          <label class="form-check-label" for="status">Commandable</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="status"
-            id="status-nostock"
-            value="no stock"
-            v-model="form.status"
-          />
-          <label class="form-check-label" for="status">Plus en stock</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="status"
-            id="status-discontinued"
-            value="discontinued"
-            v-model="form.status"
-          />
-          <label class="form-check-label" for="status">Abandonné</label>
-        </div>
       </div>
       <div class="form-group">
         <button class="btn btn-primary" @click="notif()">Envoyer</button>
@@ -91,7 +68,7 @@
 
 <script>
 //import axios from 'axios'
-import { mapState } from 'vuex'
+import { mapState, mapActions, mapMutations } from 'vuex'
 
 export default {
   name: 'MenuChangeForm',
@@ -106,16 +83,33 @@ export default {
     }
   },
   computed: {
-    ...mapState(['selectedRestaurant']),
+    ...mapState(['selectedROProduct', 'selectedRestaurant']),
+    ...mapMutations(['selectedROProductT']),
   },
   methods: {
-    notif() {
-      this.$notify({
-        group: 'foo',
-        title: 'Menu modifié',
-      })
+    ...mapActions(['']),
+
+    async EditMenu(e) {
+      console.log(this.selectedRestaurant.name)
+      console.log(e)
+      e.preventDefault()
+      let data = {
+        name: e.target.elements.name.value,
+        description: e.target.elements.description.value,
+        prix: e.target.elements.prix.value,
+        status: e.target.elements.status.value,
+        id: this.selectedRestaurant._id,
+      }
+      await this.edit(data)
     },
-    /*submitForm(){
+  },
+  notif() {
+    this.$notify({
+      group: 'foo',
+      title: 'Menu modifié',
+    })
+  },
+  /*submitForm(){
             axios.post('/contact', this.form)
                  .then((res) => {
                      //Perform Success Action
@@ -126,7 +120,6 @@ export default {
                      //Perform action in always
                  });
         }*/
-  },
 }
 </script>
 

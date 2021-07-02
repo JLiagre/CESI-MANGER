@@ -1,5 +1,5 @@
 <template>
-  <div class="acc-form" v-if="(userClient = true)">
+  <div class="acc-form">
     <h2 class="change-acc-name">Créer mon menu</h2>
     <form v-on:submit.prevent="submitForm">
       <div class="form-group">
@@ -27,7 +27,7 @@
       <div class="form-group">
         <label class="form-label" for="prix">Prix du produit</label>
         <input
-          type="email"
+          type="number"
           class="form-control"
           id="prix"
           name="prix"
@@ -68,8 +68,7 @@
 </template>
 
 <script>
-//import axios from 'axios'
-import mapState from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'MenuCreateForm',
@@ -87,11 +86,24 @@ export default {
     ...mapState(['selectedRestaurant']),
   },
   methods: {
+    ...mapActions(['createMenu']),
     notif() {
       this.$notify({
         group: 'foo',
         title: 'Menu créé',
       })
+    },
+
+    async submitForm(e) {
+      let data = {
+        name: e.target.elements.name.value,
+        description: e.target.elements.description.value,
+        prix: e.target.elements.prix.value,
+        status: e.target.elements.status.value,
+        id: this.selectedRestaurant._id,
+      }
+      console.log(data)
+      await this.createMenu(data)
     },
     /*submitForm(){
             axios.post('/contact', this.form)
