@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col">
         <span class="border border-dark">
-          <menu-create></menu-create>
+          <menuCreate></menuCreate>
         </span>
       </div>
     </div>   
