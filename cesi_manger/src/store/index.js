@@ -173,6 +173,42 @@ const store = new Vuex.Store({
           console.log(error)
         })
     },
+
+   async menuGesture(context, id){
+     return await axios
+         .get('/api/restaurant/edit', {
+           params: {
+             id: id,
+           },
+         })
+         .then((response) => {
+           console.log('Entered in there')
+           console.log(response)
+           console.log(response.data)
+           context.commit('selectedRestaurant', response.data)
+           router.push({ name: 'changeMenu' })
+         })
+         .catch(function (error) {
+           console.log('nope')
+           console.log(error)
+         })
+    }
+
+    // async editMenu(context, data) {
+    //   console.log('efefefef')
+    //   console.log(data)
+    //   return await axios
+    //       .post('/api/restaurant/changeMenu', { id: context.state.user.ID, data: data })
+    //       .then((response) => {
+    //         context.commit('updateUser', response.data.recordset[0])
+    //         console.log('User edited ')
+    //         router.push({name: 'changeMenu'})
+    //       })
+    //       .catch(function (error) {
+    //         console.log('nope')
+    //         console.log(error)
+    //       })
+    // },
   },
 })
 
