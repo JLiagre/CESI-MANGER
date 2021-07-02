@@ -53,32 +53,32 @@ const routes = [
   {
     path: '/bardon',
     name: 'bardon',
-    component: () => import('../components/Shop/Restaurants/Bardon.vue')
+    component: () => import('../components/Shop/Restaurants/Bardon.vue'),
   },
   {
     path: '/caci',
     name: 'caci',
-    component: () => import('../components/Shop/Restaurants/Caci.vue')
+    component: () => import('../components/Shop/Restaurants/Caci.vue'),
   },
   {
     path: '/ces',
     name: 'ces',
-    component: () => import('../components/Shop/Restaurants/CES.vue')
+    component: () => import('../components/Shop/Restaurants/CES.vue'),
   },
   {
     path: '/salade',
     name: 'salade',
-    component: () => import('../components/Shop/Restaurants/Salade.vue')
+    component: () => import('../components/Shop/Restaurants/Salade.vue'),
   },
   {
     path: '/jojo',
     name: 'jojo',
-    component: () => import('../components/Shop/Restaurants/Jojo.vue')
+    component: () => import('../components/Shop/Restaurants/Jojo.vue'),
   },
   {
     path: '/sésé',
     name: 'sésé',
-    component: () => import('../components/Shop/Restaurants/Sésé.vue')
+    component: () => import('../components/Shop/Restaurants/Sésé.vue'),
   },
   //
   // Gestion Profil

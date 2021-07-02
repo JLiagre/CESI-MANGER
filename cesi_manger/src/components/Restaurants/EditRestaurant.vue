@@ -133,18 +133,16 @@
             type="text"
             id="ouverture"
             placeholder="Vos heures d'ouverture"
-            :value="selectedRestaurant.opening_hours"
+            :value="selectedRestaurant.opening_hours[0]"
           />
         </div>
         <div class="form-group col">
-          <!--<label class="form-label" for="fermeture">Fermeture</label>-->
           <input
             class="form-control"
             type="text"
             id="fermeture"
-            value="fermeture"
             placeholder="Vos heures de fermeture"
-            v-model="houropen"
+            :value="selectedRestaurant.opening_hours[1]"
           />
         </div>
       </div>
