@@ -57,7 +57,8 @@ export default {
   components: {
     'menu-change': MenuChange,
     'menu-create': MenuCreate,
-    product: Product,
+    'product-change': ProductChange,
+    'product-create': ProductCreate,
   },
 }
 </script>
