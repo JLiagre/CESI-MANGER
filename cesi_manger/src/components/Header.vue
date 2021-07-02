@@ -48,7 +48,7 @@
           this.$store.state.connected === true &&
           this.$store.state.user.userRole === 'restaurateur'
         "
-        to="/restaurants"
+        @click="toRestaurants"
         >Mes Restaurants
       </v-btn>
       <v-btn v-if="this.$store.state.connected === true" @click="Logout"
@@ -63,9 +63,12 @@ import { mapActions } from 'vuex'
 
 export default {
   methods: {
-    ...mapActions(['logout']),
+    ...mapActions(['logout', 'getRestaurants']),
     Logout() {
       this.logout()
+    },
+    toRestaurants() {
+      this.getRestaurants()
     },
   },
 

@@ -9,17 +9,17 @@
           class="form-control"
           id="name"
           placeholder="Nom du restaurant"
-          v-model="form.name"
+          name="name"
         />
       </div>
       <div class="form-group">
         <label class="form-label" for="description">Description</label>
         <input
-          type="email"
+          type="text"
+          name="description"
           class="form-control"
           id="description"
           placeholder="Description du restaurant"
-          v-model="form.description"
         />
       </div>
       <div class="form-group">
@@ -27,29 +27,29 @@
         <input
           type="text"
           class="form-control"
+          name="address"
           id="address"
           placeholder="Votre adresse"
-          v-model="form.address"
         />
       </div>
       <div class="form-group">
         <label class="form-label" for="zip">Code postal</label>
         <input
           type="text"
+          name="zip"
           class="form-control"
           id="zip"
-          placeholder="Votre adresse"
-          v-model="form.zip"
+          placeholder="Code postal"
         />
       </div>
       <div class="form-group">
         <label class="form-label" for="city">Ville</label>
         <input
+          name="city"
           type="text"
           class="form-control"
           id="city"
           placeholder="Votre ville"
-          v-model="form.city"
         />
       </div>
       <div class="form-group">
@@ -58,40 +58,28 @@
           type="text"
           class="form-control"
           id="country"
+          name="country"
           placeholder="Votre pays"
-          v-model="form.country"
         />
       </div>
+
       <div class="form-group">
-        <label class="form-label" for="dayopen">Jours d'ouverture</label>
+        <label class="form-label">Jours d'ouverture</label>
         <div class="row">
           <div class="col">
-            <input
-              type="checkbox"
-              id="lundi"
-              value="lundi"
-              class="btn-check"
-              v-model="form.dayopen"
-            />
+            <input type="checkbox" id="lundi" name="lundi" class="btn-check" />
             <label class="btn btn-outline-success" for="lundi">Lundi</label>
           </div>
           <div class="col">
-            <input
-              type="checkbox"
-              id="mardi"
-              value="mardi"
-              class="btn-check"
-              v-model="form.dayopen"
-            />
+            <input type="checkbox" id="mardi" name="mardi" class="btn-check" />
             <label class="btn btn-outline-success" for="mardi">Mardi</label>
           </div>
           <div class="col">
             <input
               type="checkbox"
               id="mercredi"
-              value="mercredi"
+              name="mercredi"
               class="btn-check"
-              v-model="form.dayopen"
             />
             <label class="btn btn-outline-success" for="mercredi"
               >Mercredi</label
@@ -102,8 +90,8 @@
               type="checkbox"
               id="jeudi"
               value="jeudi"
+              name="jeudi"
               class="btn-check"
-              v-model="form.dayopen"
             />
             <label class="btn btn-outline-success" for="jeudi">Jeudi</label>
           </div>
@@ -111,9 +99,8 @@
             <input
               type="checkbox"
               id="vendredi"
-              value="vendredi"
+              name="vendredi"
               class="btn-check"
-              v-model="form.dayopen"
             />
             <label class="btn btn-outline-success" for="vendredi"
               >Vendredi</label
@@ -123,9 +110,8 @@
             <input
               type="checkbox"
               id="samedi"
-              value="samedi"
+              name="samedi"
               class="btn-check"
-              v-model="form.dayopen"
             />
             <label class="btn btn-outline-success" for="samedi">Samedi</label>
           </div>
@@ -133,9 +119,8 @@
             <input
               type="checkbox"
               id="dimanche"
-              value="dimanche"
+              name="dimanche"
               class="btn-check"
-              v-model="form.dayopen"
             />
             <label class="btn btn-outline-success" for="dimanche"
               >Dimanche</label
@@ -143,6 +128,7 @@
           </div>
         </div>
       </div>
+
       <label class="form-label" for="houropen">Heures d'ouverture</label>
       <div class="form-group row">
         <div class="form-group col">
@@ -151,9 +137,8 @@
             class="form-control"
             type="text"
             id="ouverture"
-            value="ouverture"
             placeholder="Vos heures d'ouverture"
-            v-model="houropen"
+            name="heure_ouverture"
           />
         </div>
         <div class="form-group col">
@@ -162,9 +147,8 @@
             class="form-control"
             type="text"
             id="fermeture"
-            value="fermeture"
             placeholder="Vos heures de fermeture"
-            v-model="houropen"
+            name="heure_fermeture"
           />
         </div>
       </div>
@@ -175,26 +159,15 @@
   </div>
 </template>
 <script>
-//import axios from 'axios'
+import { mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'EditRestaurant',
-  data() {
-    return {
-      form: {
-        username: '',
-        password: '',
-        name: '',
-        description: '',
-        address: '',
-        zip: '',
-        city: '',
-        country: '',
-        dayopen: [],
-        houropen: [],
-      },
-    }
-  },
+
   methods: {
+    ...mapGetters(['getID']),
+    ...mapActions(['createRestaurant']),
     notif() {
       this.$notify({
         group: 'foo',
@@ -202,17 +175,32 @@ export default {
         text: "Votre demande a bien été prise en compte, nos équipes s'en charge le plus rapidement possible.",
       })
     },
-    /*submitForm(){
-            axios.post('/contact', this.form)
-                 .then((res) => {
-                     //Perform Success Action
-                 })
-                 .catch((error) => {
-                     // error.response.status Check status code
-                 }).finally(() => {
-                     //Perform action in always
-                 });
-        }*/
+    async submitForm(e) {
+      let data = {
+        name: e.target.elements.name.value,
+        city: e.target.elements.city.value,
+        zip: e.target.elements.zip.value,
+        country: e.target.elements.country.value,
+        address: e.target.elements.address.value,
+        opening_days: [
+          e.target.elements.lundi.checked,
+          e.target.elements.mardi.checked,
+          e.target.elements.mercredi.checked,
+          e.target.elements.jeudi.checked,
+          e.target.elements.vendredi.checked,
+          e.target.elements.samedi.checked,
+          e.target.elements.dimanche.checked,
+        ],
+        opening_hours: [
+          e.target.elements.heure_ouverture.value,
+          e.target.elements.heure_fermeture.value,
+        ],
+        userID: this.getID(),
+      }
+      console.log(this.getID())
+      console.log(data)
+      await this.createRestaurant(data)
+    },
   },
 }
 </script>
@@ -225,14 +213,17 @@ export default {
   color: #000000;
   margin: 0;
 }
+
 .form-group {
   padding-left: 3em;
   padding-right: 3em;
   padding-bottom: 1em;
 }
+
 .form-label {
   font-weight: bold;
 }
+
 .change-acc-name {
   font-weight: bold;
 }

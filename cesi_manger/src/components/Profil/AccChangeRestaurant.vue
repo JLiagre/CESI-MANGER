@@ -1,6 +1,6 @@
 <template>
   <div class="acc-form">
-    <h2 class="change-acc-name">Modifier mon compte</h2>
+    <h2 class="change-acc-name">Modifier mon restaurant</h2>
     <form v-on:submit.prevent="submitForm">
       <h5>Compte</h5>
       <div class="form-group row ml-1 mr-1 pb-8">
@@ -107,6 +107,8 @@
 
 <script>
 //import axios from 'axios'
+import { mapActions, mapState } from 'vuex'
+
 export default {
   name: 'AccChangeRestaurant',
   data() {
@@ -125,7 +127,28 @@ export default {
       },
     }
   },
+  computed: {
+    ...mapState(['selectedRestaurant']),
+  },
   methods: {
+    ...mapActions(['editRestaurant']),
+    async EditUser(e) {
+      console.log(e)
+      e.preventDefault()
+      let data = {
+        user_name: e.target.elements.username.value,
+        password: e.target.elements.password.value,
+        email: e.target.elements.email.value,
+        city: e.target.elements.city.value,
+        zip: e.target.elements.zip.value,
+        telephone: e.target.elements.telephone.value,
+        country: e.target.elements.country.value,
+        surname: e.target.elements.surname.value,
+        name: e.target.elements.name.value,
+        address: e.target.elements.address.value,
+      }
+      await this.editRestaurant(data)
+    },
     notif() {
       this.$notify({
         group: 'foo',
