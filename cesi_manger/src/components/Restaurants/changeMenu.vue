@@ -32,7 +32,7 @@ export default {
     ...mapState(['selectedRestaurant']),
   },
   methods: {
-    ...mapActions(['editRestaurant']),
+    ...mapActions(['createMenu']),
 
     notif() {
       this.$notify({
