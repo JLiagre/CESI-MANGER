@@ -243,8 +243,6 @@ export default {
     QrcodeVue,
   },
   methods: {
-
-
     getUser() {
       console.log(this.user)
     },

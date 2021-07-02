@@ -1,6 +1,7 @@
 <template>
   <v-main>
-    <vue-splash v-if="!this.$store.state.connected"
+    <vue-splash
+      v-if="!this.$store.state.connected"
       :show="true"
       :logo="logo"
       color="#fff"
