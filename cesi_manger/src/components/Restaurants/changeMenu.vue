@@ -3,37 +3,35 @@
     <div class="row">
       <div class="col">
         <span class="border border-dark">
-          <menuChange></menuChange>
+          <MenuChangeForm></MenuChangeForm>
         </span>
       </div>
-    </div>  
+    </div>
     <div class="row">
       <div class="col">
         <span class="border border-dark">
-          <menuCreate></menuCreate>
+          <MenuCreateForm></MenuCreateForm>
         </span>
       </div>
-    </div>   
+    </div>
   </v-main>
 </template>
 <script>
-
-import {mapActions, mapState} from "vuex";
-import MenuChangeForm from "../Menu/MenuChange";
-import MenuCreateForm from '../Menu/MenuCreate.vue'
+import { mapActions, mapState } from 'vuex'
+import MenuChangeForm from '../Menu/MenuChange'
+import MenuCreateForm from '../Menu/MenuCreate'
 
 export default {
-  components:{
-    'menuChange' : MenuChangeForm,
-    'menuCreate' : MenuCreateForm,
+  components: {
+ MenuChangeForm,
+    MenuCreateForm,
   },
-  name: "changeMenu",
+  name: 'changeMenu',
   computed: {
     ...mapState(['selectedRestaurant']),
   },
   methods: {
     ...mapActions(['createMenu']),
-
     notif() {
       this.$notify({
         group: 'foo',
@@ -41,10 +39,8 @@ export default {
         text: "Votre demande a bien été prise en compte, nos équipes s'en charge le plus rapidement possible.",
       })
     },
-  }
+  },
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

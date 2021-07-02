@@ -3,7 +3,10 @@
     <h2 class="change-acc-name">Modifier mon menu</h2>
     <form v-on:submit.prevent="submitForm">
       <div class="form-group">
-        <label class="form-label" for="name">Nom du produit pour le restaurant {{selectedRestaurant.name}}</label>
+        <label class="form-label" for="name"
+          >Nom du produit pour le restaurant
+          {{ selectedRestaurant.name }}</label
+        >
         <input
           type="text"
           class="form-control"
@@ -88,7 +91,7 @@
 
 <script>
 //import axios from 'axios'
-import {mapState} from "vuex";
+import { mapState } from 'vuex'
 
 export default {
   name: 'MenuChangeForm',
