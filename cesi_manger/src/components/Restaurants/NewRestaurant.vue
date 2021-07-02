@@ -164,7 +164,6 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'EditRestaurant',
-
   methods: {
     ...mapGetters(['getID']),
     ...mapActions(['createRestaurant']),

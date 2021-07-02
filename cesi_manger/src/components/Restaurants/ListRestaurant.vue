@@ -44,7 +44,7 @@ import { mapActions } from 'vuex'
 export default {
   name: 'ListRestaurant',
   methods: {
-    ...mapActions(['deleteRestaurant', 'selectRestaurant', 'editMenu']),
+    ...mapActions(['deleteRestaurant', 'selectRestaurant', 'menuGesture']),
     randomStat() {
       return Math.floor(Math.random() * 150)
     },
@@ -57,7 +57,7 @@ export default {
     },
     async EditMenu(e) {
       console.log(e)
-      await this.editMenu(e)
+      await this.menuGesture(e)
     },
   },
   computed: {

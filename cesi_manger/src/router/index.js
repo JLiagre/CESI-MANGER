@@ -122,6 +122,11 @@ const routes = [
     name: 'Edit Menu',
     component: () => import('../components/Restaurants/EditMenu.vue'),
   },
+  {
+    path: '/changeMenu',
+    name: 'changeMenu',
+    component: () => import('../components/Restaurants/changeMenu.vue'),
+  },
 ]
 
 const router = new VueRouter({
