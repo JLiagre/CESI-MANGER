@@ -3,14 +3,12 @@
     <div class="row">
       <div class="col">
         <span class="border border-dark">
-          <MenuChangeForm></MenuChangeForm>
+          <create></create>
         </span>
       </div>
-    </div>
-    <div class="row">
       <div class="col">
         <span class="border border-dark">
-          <MenuCreateForm></MenuCreateForm>
+          <change></change>
         </span>
       </div>
     </div>
@@ -23,8 +21,8 @@ import MenuCreateForm from '../Menu/MenuCreate'
 
 export default {
   components: {
- MenuChangeForm,
-    MenuCreateForm,
+    create: MenuCreateForm,
+    change: MenuChangeForm,
   },
   name: 'changeMenu',
   computed: {

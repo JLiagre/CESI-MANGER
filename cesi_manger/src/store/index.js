@@ -19,6 +19,7 @@ const store = new Vuex.Store({
     restaurantList: [],
     MenuList: [],
     selectedRestaurant: [],
+    selectedROProduct: [],
   },
   getters: {
     getID: (state) => {
@@ -52,6 +53,10 @@ const store = new Vuex.Store({
     },
     selectedRestaurant(state, list) {
       state.selectedRestaurant = list
+      console.log(state.restaurantList)
+    },
+    selectedROProductT(state, product) {
+      state.selectedROProduct = product
       console.log(state.restaurantList)
     },
   },
@@ -100,6 +105,7 @@ const store = new Vuex.Store({
         })
     },
     async getMenus(context, id) {
+      console.log(id)
       return await axios
         .get('/api/restaurant/menus', {
           params: {
@@ -137,8 +143,7 @@ const store = new Vuex.Store({
     },
     async getRestaurantsClient(context) {
       return await axios
-        .get('/api/restaurant/all', {
-        })
+        .get('/api/restaurant/all', {})
         .then((response) => {
           console.log('Restaurant list')
           console.log(response.data)
@@ -242,6 +247,23 @@ const store = new Vuex.Store({
           console.log('Menu created ')
           context.commit('selectedRestaurant', response.data)
           router.push({ name: 'restaurants' })
+        })
+        .catch(function (error) {
+          console.log('nope')
+          console.log(error)
+        })
+    },
+
+    async editMenu(context, data) {
+      console.log(data)
+      return await axios
+        .post('/api/restaurant/editMenu', {
+          id: context.state.user.ID,
+          data: data,
+        })
+        .then((response) => {
+          context.dispatch('selectRestaurant', response)
+          console.log('Restaurant edited ')
         })
         .catch(function (error) {
           console.log('nope')

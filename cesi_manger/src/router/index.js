@@ -38,7 +38,8 @@ const routes = [
   {
     path: '/shop',
     name: 'shop',
-    component: () => import('../components/Restaurants/ListRestaurant_client.vue'),
+    component: () =>
+      import('../components/Restaurants/ListRestaurant_client.vue'),
   },
   {
     path: '/shop/menu',

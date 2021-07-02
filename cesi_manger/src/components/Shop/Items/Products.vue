@@ -1,9 +1,9 @@
 <template>
   <div class="products">
     <h3>Produits</h3>
-    <h1>{{MenuList}}</h1>
-    <div class="card mt-5">
-      <div class="card-header">Liste des produits</div>
+    <h1></h1>
+    <div class="==card mt-5">
+      <div class="card-header">Liste des produits {{ MenuList }}</div>
       <div class="card-body">
         <div class="table-responsive">
           <table class="table">
@@ -117,15 +117,16 @@ export default {
       { product_id: 3, product_name: 'tata', product_price: 1.99 },
     ],
   }),
+  computed: {
+    ...mapState(['MenuList']),
+  },
   methods: {
     onAddToCart() {},
     onEdit() {},
     onDelete(index) {
       this.products.splice(index, 1)
     },
-  computed: {
-    ...mapState(['MenuList']),
-  },
+
   },
 
   /* *********************************************** */

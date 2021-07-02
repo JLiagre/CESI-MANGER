@@ -19,7 +19,9 @@
           hide-details="auto"
           prepend-icon="mdi-map-marker"
         ></v-text-field>
-        <div class="boutonCmd"><v-btn @click="getRestaurantsClient">Shop</v-btn></div>
+        <div class="boutonCmd">
+          <v-btn @click="getRestaurantsClient">Shop</v-btn>
+        </div>
       </div>
     </div>
     <div class="carrousel">
