@@ -8,6 +8,7 @@
           type="text"
           class="form-control"
           id="name"
+          name="name"
           placeholder="Le nom du produit"
           v-model="form.name"
         />
@@ -18,6 +19,7 @@
           type="text"
           class="form-control"
           id="description"
+          name="description"
           placeholder="Description du produit"
           v-model="form.description"
         />
@@ -28,6 +30,7 @@
           type="email"
           class="form-control"
           id="prix"
+          name="prix"
           placeholder="00€"
           v-model="form.prix"
         />
@@ -66,6 +69,8 @@
 
 <script>
 //import axios from 'axios'
+import mapState from 'vuex'
+
 export default {
   name: 'MenuCreateForm',
   data() {
@@ -77,6 +82,9 @@ export default {
         status: '',
       },
     }
+  },
+  computed: {
+    ...mapState(['selectedRestaurant']),
   },
   methods: {
     notif() {

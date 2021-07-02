@@ -1,14 +1,31 @@
 <template>
-  <v-main><menuChange></menuChange></v-main>
+  <v-main>
+    <div class="row">
+      <div class="col">
+        <span class="border border-dark">
+          <menuChange></menuChange>
+        </span>
+      </div>
+    </div>  
+    <div class="row">
+      <div class="col">
+        <span class="border border-dark">
+          <menu-create></menu-create>
+        </span>
+      </div>
+    </div>   
+  </v-main>
 </template>
 <script>
 
 import {mapActions, mapState} from "vuex";
 import MenuChangeForm from "../Menu/MenuChange";
+import MenuCreateForm from '../Menu/MenuCreate.vue'
 
 export default {
   components:{
-    'menuChange' : MenuChangeForm
+    'menuChange' : MenuChangeForm,
+    'menuCreate' : MenuCreateForm,
   },
   name: "changeMenu",
   computed: {
